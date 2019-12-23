@@ -93,6 +93,7 @@ int randomNumber()
 int getChoice(int choice)
 {
     choice = 0;
+
     scanf("Make a choice: %d", &choice);
     return choice;
 }
@@ -100,17 +101,21 @@ int getChoice(int choice)
 
 void keepAlive()
 {
-if (/* condition */)
-{
-        
-}
+    if (/* condition */)
+    {
+        printf("Only 1-6 are allowed, try again!");
+    }
 }
 
 int getInput()
 {
-    
+    printf("Write your guess (only 1-6, no ENTER is needed)\n%d guesses left" , );
 }
 
+int trysLeft()
+{
+    
+}
 
 
 
