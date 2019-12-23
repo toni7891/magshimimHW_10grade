@@ -1,27 +1,22 @@
 #include <stdio.h>
 #include <time.h>
 #include <stdlib.h>
+#include <math.h>
+
+#define POWER1 1000
+#define POWER2 100
+#define POWER3 10
 
 int difficultyLevel(int choice);
 
 int randomNumber();
 
-int numberRandom = 0;
+int getChoice();
+
+int choice = 0;
 
 int main(void)
 {
-
-    enum MyChoice
-    {
-        EASY = 1,
-        MODERATE,
-        HARD,
-        CRAZY
-    };
-
-    enum MyChoice choice;
-
-    choice = 0;
 
     do
     {
@@ -41,7 +36,8 @@ int main(void)
     printf("2 - Moderate (15 rounds)");
     printf("3 - Hard (10 rounds)");
     printf("4 - Crazy (random number of rounds 5-25)");
-    scanf("Make a choice: %d", &choice);
+    getChoice(choice);
+    choice = getChoice(choice);
     } while (choice != 1 && choice != 2 && choice != 3 && choice != 4 &&);
 
     return 0;
@@ -74,15 +70,47 @@ void difficultyLevel(int choice)
 
 }
 
-int randomNumber(numberRandom)
+int randomNumber()
 {
+    int numberRandom1 = 0;
+    int numberRandom2 = 0;
+    int numberRandom3 = 0;
+    int numberRandom4 = 0;
+    int finalNum = 0;
 
     srand(time(0));
 
-    numberRandom = (rand() % 6) + 1;
+    numberRandom1 = (rand() % 6) + 1;
+    numberRandom2 = (rand() % 6) + 1;
+    numberRandom3 = (rand() % 6) + 1;
+    numberRandom4 = (rand() % 6) + 1;
 
-    return numberRandom;
+    finalNum = (pow(numberRandom1 ,POWER1)) + (pow(numberRandom2 , POWER2)) + (pow(numberRandom3 , POWER3)) + (numberRandom4);
+
+    return finalNum;
 }
+
+int getChoice(int choice)
+{
+    choice = 0;
+    scanf("Make a choice: %d", &choice);
+    return choice;
+}
+
+
+void keepAlive()
+{
+if (/* condition */)
+{
+        
+}
+}
+
+int getInput()
+{
+    
+}
+
 
 
 
