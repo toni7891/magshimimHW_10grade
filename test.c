@@ -1,13 +1,13 @@
 #include <stdio.h>
-#include <conio.h>
+#include <curses.h>
 
 int main(void)
 {
 
-    char x1 = 0;
-    char x2 = 0;
-    char x3 = 0;
-    char x4 = 0;
+    int x1 = 0;
+    int x2 = 0;
+    int x3 = 0;
+    int x4 = 0;
     int final = 0;
 
     printf("Hello world!\nenter a number: ");
