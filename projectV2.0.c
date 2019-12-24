@@ -112,22 +112,10 @@ int randNumber()
 //reference : https://stackoverflow.com/questions/41383062/c-how-to-break-scanf-with-no-enter-and-no-string
 int getUserInput()
 {
-    char ch;
     int input = 0;
-    int digits_cnt = 0;
-    int bits = 0;
-    int modulu = 0;
+
     printf("Write your guess (only 1-6, no ENTER is needed)\n%d guesses left" , );
-    while (digits_cnt < 4)
-    {
-        ch = _getche();
-        if (isdigit(ch))
-        {
-            input *= 10;       // add an order to number
-            input += ch - ''; // add a decimal digit to number
-            digits_cnt++;      // count this digit to stop loop
-        }
-    }
+    
 }
 
 

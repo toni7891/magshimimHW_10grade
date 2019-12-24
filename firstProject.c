@@ -106,18 +106,30 @@ void keepAlive()
 
 int getInput()
 {
-    int input = getch();
-    printf("Write your guess (only 1-6, no ENTER is needed)\n%d guesses left" , );
-    getch();
+    int input = 0;
+    while (a1 == b1 || a1 == c1 || a1 == d1 || b1 == c1 || b1 == d1 || c1 == d1 || input< 123 || n>6666)
+    {
     
-    printf("Only 1-6 are allowed, try again!", );
+    printf("Write your guess (only 1-6, no ENTER is needed)\n%d guesses left" , );
+    scanf("%d",&input);
+
+    d1 = input % 10;
+    c1 = (input / 10) % 10;
+    b1 = (input / 100) % 10;
+    a1 = (n/1000) %10;
+    
+    }
 }
+
+
+
 
 int trysLeft()
 {
     
 }
 
+    printf("Only 1-6 are allowed, try again!", );
 
 
 
