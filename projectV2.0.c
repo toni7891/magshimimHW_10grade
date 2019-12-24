@@ -1,22 +1,21 @@
 #include <stdio.h>
 #include <time.h>
 #include <stdlib.h>
-#include <math.h>
+#include <conio.h>
 
 #define POWER1 1000
 #define POWER2 100
 #define POWER3 10
 
-int difficultyLevel(int choice);
+void gamemode(choice);
 
-int randomNumber();
+int randNumber();
 
-int getChoice();
-
-int choice = 0;
+int trys = 0;
 
 int main(void)
 {
+    int choice = 0;
 
     do
     {
@@ -36,18 +35,8 @@ int main(void)
     printf("2 - Moderate (15 rounds)");
     printf("3 - Hard (10 rounds)");
     printf("4 - Crazy (random number of rounds 5-25)");
-    getChoice(choice);
-    choice = getChoice(choice);
+    scanf("Make a choice: %d", &choice);
     } while (choice != 1 && choice != 2 && choice != 3 && choice != 4 &&);
-
-    return 0;
-}
-
-void difficultyLevel(int choice)
-{
-    srand(time(0))
-
-    int trys = 0;
 
     switch (choice)
     {
@@ -64,59 +53,101 @@ void difficultyLevel(int choice)
         break;
 
     case 4:
+        srand(time(0));
         trys = (rand() % 25) + 1;
         break;
     }
 
-}
-
-int randomNumber()
-{
-    int numberRandom1 = 0;
-    int numberRandom2 = 0;
-    int numberRandom3 = 0;
-    int numberRandom4 = 0;
+    while (a==b||a==c||a==d||b==c||b==d||c==d)
+    {
+    
+    int num1 = 0;
+    int num2 = 0;
+    int num3 = 0;
+    int num4 = 0;
     int finalNum = 0;
 
     srand(time(0));
 
-    numberRandom1 = (rand() % 6) + 1;
-    numberRandom2 = (rand() % 6) + 1;
-    numberRandom3 = (rand() % 6) + 1;
-    numberRandom4 = (rand() % 6) + 1;
+    num1 = (rand() % 6) + 1;
+    num2 = (rand() % 6) + 1;
+    num3 = (rand() % 6) + 1;
+    num4 = (rand() % 6) + 1;
 
     finalNum = (pow(numberRandom1 ,POWER1)) + (pow(numberRandom2 , POWER2)) + (pow(numberRandom3 , POWER3)) + (numberRandom4);
 
     return finalNum;
-}
 
-int getChoice(int choice)
-{
-    choice = 0;
-
-    scanf("Make a choice: %d", &choice);
-    return choice;
 }
 
 
-void keepAlive()
-{
-    if (/* condition */)
+    return 0;
 }
 
-int getInput()
+int randNumber()
 {
-    int input = getch();
+
+    while (num1==num2||num1==num3||num1==num4||num2==num3||num2==num4||num3==num4)
+    {
+        int num1 = 0;
+        int num2 = 0;
+        int num3 = 0;
+        int num4 = 0;
+        int finalNum = 0;
+
+        srand(time(0));
+
+        num1 = (rand() % 6) + 1;
+        num2 = (rand() % 6) + 1;
+        num3 = (rand() % 6) + 1;
+        num4 = (rand() % 6) + 1;
+
+    }
+    
+    finalNum = (pow(num1 ,POWER1)) + (pow(num2 , POWER2)) + (pow(num3 , POWER3)) + (num4);
+    
+    return finalNum;
+}
+
+//reference : https://stackoverflow.com/questions/41383062/c-how-to-break-scanf-with-no-enter-and-no-string
+int getUserInput()
+{
+    char ch;
+    int input = 0;
+    int digits_cnt = 0;
+    int bits = 0;
+    int modulu = 0;
     printf("Write your guess (only 1-6, no ENTER is needed)\n%d guesses left" , );
-    getch();
-    
-    printf("Only 1-6 are allowed, try again!", );
+    while (digits_cnt < 4)
+    {
+        ch = _getche();
+        if (isdigit(ch))
+        {
+            input *= 10;       // add an order to number
+            input += ch - ''; // add a decimal digit to number
+            digits_cnt++;      // count this digit to stop loop
+        }
+    }
 }
 
-int trysLeft()
-{
-    
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
