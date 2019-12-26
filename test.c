@@ -1,23 +1,17 @@
 #include <stdio.h>
 #include <conio.h>
 
+void helloWorld();
+
+int x = 4;
+
 int main(void)
 {
-
-    char x1 = 4;
-
-    int y1 = 4;
-
-    printf("Hello world!\nenter a number: ");
-
-    if (x1 == y1)
-    {
-        printf("yes");
-    }
-    
-    else
-    {
-        printf("fuck");
-    }
+    helloWorld();
     return 0;
 }
+
+ void helloWorld()
+ {
+     printf
+ }
