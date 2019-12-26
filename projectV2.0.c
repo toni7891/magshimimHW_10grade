@@ -12,7 +12,9 @@ void randNumber();
 
 int getInput(int num1, int num2, int num3, int num4 , int finalNum);
 
-int tries = 0;
+void winOfUser(int leftTries);
+
+    int tries = 0;
 
 // user instructions
 // and getting the game mood (with the amount of tries)
@@ -21,7 +23,7 @@ int main(void)
     int choice = 0;
     char again;
     START:
-        printf("Welcome to  MAGSHIMIM CODE - BREAKER !!!\n");
+        printf("\nWelcome to  MAGSHIMIM CODE - BREAKER !!!\n");
         printf("\nA secret password was chosen to protect the credit card of Pancratius,\n");
         printf("the descendant of Antiochus.\n");
         printf("Your mission is to stop Pancratius by revealing his secret password.\n");
@@ -51,9 +53,9 @@ int main(void)
             tries = 20;
             printf("%d",tries);
             randNumber();
-            printf("Would you like to play again? (y/n): ");
+            printf("\nWould you like to play again? (y/n): ");
             again = getche();
-            if ('y' || 'Y')
+            if (again == 'y' ||again == 'Y')
             {
                 goto START;
             }
@@ -62,9 +64,9 @@ int main(void)
         case 2:
             tries = 15;
             randNumber();
-            printf("Would you like to play again? (y/n): ");
+            printf("\nWould you like to play again? (y/n): ");
             again = getche();
-            if ('y' || 'Y')
+            if (again == 'y' ||again == 'Y')
             {
                 goto START;
             }
@@ -73,9 +75,9 @@ int main(void)
         case 3:
             tries = 10;
             randNumber();
-            printf("Would you like to play again? (y/n): ");
+            printf("\nWould you like to play again? (y/n): ");
             again = getche();
-            if ('y' || 'Y')
+            if (again == 'y' || again == 'Y')
             {
                 goto START;
             }
@@ -85,9 +87,9 @@ int main(void)
             srand(time(0));
             tries = (rand() % 25) + 1;
             randNumber();
-            printf("Would you like to play again? (y/n): ");
+            printf("\nWould you like to play again? (y/n): ");
             again = getche();
-            if ('y' || 'Y')
+            if (again == 'y' || again == 'Y')
             {
                 goto START;
             }
@@ -107,6 +109,8 @@ void randNumber()
 
     srand(time(0));
 
+    // generating random number and checking if there any repetition number
+    // if yes --> get new random numbers
     while (num1 == num2 || num1 == num3 || num1 == num4 || num2 == num1 || num2 == num3 || num2 == num4 || num3 == num2 || num3 == num1 || num3 == num4 || num4 == num3 || num4 == num2 || num4 == num1)
     {
     num1 = (rand() % 6) + 1;
@@ -114,9 +118,6 @@ void randNumber()
     num3 = (rand() % 6) + 1;
     num4 = (rand() % 6) + 1;
     }
-    
-
-    
 
     finalNum = (num1 * 1000) + (num2 * 100) + (num3 * 10) + (num4 * 1);
     
@@ -125,7 +126,7 @@ void randNumber()
 
 // function that keeps the game 'alive'
 // like the main function of the game 
-int getInput(int num1, int num2, int num3, int num4 , int finalNum)
+int getInput(int num1, int num2, int num3, int num4 , int finalNum , int choice)
 {
     char x1;
     char x2;
@@ -133,104 +134,130 @@ int getInput(int num1, int num2, int num3, int num4 , int finalNum)
     char x4;
     int miss = 0;
     int bull = 0;
+    int leftTries = tries;
     
     // loop to keep the game till the tries number end or the player wins
     do
     {
         // getting user input number
         INPUT:
-        printf("\nWrite your guess (only 1-6, no ENTER is needed)\n%d guesses left\n", tries);
-        printf("%d", finalNum);
-        x1 = getche();
-        x2 = getche();
-        x3 = getche();
-        x4 = getche();
+            
+            if (tries == 0)
+            {
+                goto ENDOFUSER;
+            }
+            if (choice == 1 || choice == 2 || choice == 3)
+            {
+            printf("\nWrite your guess (only 1-6, no ENTER is needed)\n%d guesses left\n", tries);
+            }
 
-        x1 = x1 - 48;
-        x2 = x2 - 48;
-        x3 = x3 - 48;
-        x4 = x4 - 48;
+            else if(choice == 4)
+            {
+                printf("\nWrite your guess (only 1-6, no ENTER is needed)\n");
+            }
 
-        if (x1 < 1 || x1 > 6 || x2 < 1 || x2 > 6 || x3 < 1 || x3 > 6 || x4 < 1 || x4 > 6)
-        {
-            printf("Only 1-6 are allowed, try again!\n");
-            goto INPUT;
-        }
-        
-        //remove one try
-        tries = tries - 1;
+            printf("%d\n", finalNum);
+            x1 = getche();
+            x2 = getche();
+            x3 = getche();
+            x4 = getche();
 
-        // checking bulls and misses
-        miss = 0;
-        bull - 0;
-        if (x1 == num2 || x1 == num3 || x1 == num4)
-        {
-            miss = miss + 1;  
-        }
+            x1 = x1 - 48;
+            x2 = x2 - 48;
+            x3 = x3 - 48;
+            x4 = x4 - 48;
 
-        else if (x1 == num1)
-        {
-            bull = bull + 1;
-        }
+            if (x1 < 1 || x1 > 6 || x2 < 1 || x2 > 6 || x3 < 1 || x3 > 6 || x4 < 1 || x4 > 6)
+            {
+                printf("Only 1-6 are allowed, try again!\n");
+                goto INPUT;
+            }
 
-        if (x2 == num1 || x2 == num3 || x2 == num4)
-        {
-            miss = miss + 1;
-        }
+            // getting back the misses and bull to 0
+            miss = 0;
+            bull = 0;
+            
+            //remove one try
+            tries = tries - 1;
 
-        else if (x2 == num2)
-        {
-            bull = bull + 1;
-        }
+            // checking bulls and misses
+            if (x1 == num2 || x1 == num3 || x1 == num4)
+            {
+                miss = miss + 1;  
+            }
 
-        
-        if (x3 == num2 || x3 == num1 || x3 == num4)
-        {
-            miss = miss + 1;
-        }
+            else if (x1 == num1)
+            {
+                bull = bull + 1;
+            }
 
-        else if (x3 == num3)
-        {
-            bull = bull + 1;
-        }
+            if (x2 == num1 || x2 == num3 || x2 == num4)
+            {
+                miss = miss + 1;
+            }
 
-        if (x4 == num2 || x4 == num1 || x4 == num3)
-        {
-            miss = miss + 1;
-        }
+            else if (x2 == num2)
+            {
+                bull = bull + 1;
+            }
 
-        else if (x4 == num4)
-        {
-            bull = bull + 1;
-        }
+            
+            if (x3 == num2 || x3 == num1 || x3 == num4)
+            {
+                miss = miss + 1;
+            }
 
-        if (bull != 4)
-        {
-        printf("\nYou got\t %d HITS\t %d MISSES." , bull , miss);
-        }
-        
+            else if (x3 == num3)
+            {
+                bull = bull + 1;
+            }
 
-        if (bull == 4)
-        {
-            printf("4 HITS YOU WON!!!\n");
-            printf("\nIt took you only %d guesses, you are a professional code breaker!", tries);
-            goto ENDOFUSER;
+            if (x4 == num2 || x4 == num1 || x4 == num3)
+            {
+                miss = miss + 1;
+            }
 
-        }        
-        
-        else if (bull != 4 && tries == 0)
-        {
-            printf("\nOOOOHHHH!!! Pancratius won and bought all of Hanukkah's gifts.\n");
-            printf("Nothing left for you...\n");
-            printf("The secret password was %d\n", finalNum);
-            goto ENDOFUSER;
-        }
-        else
-        {
+            else if (x4 == num4)
+            {
+                bull = bull + 1;
+            }
 
-        }
+            // out put of bull and misses
+            if (bull != 4)
+            {
+            printf("\nYou got\t %d HITS\t %d MISSES." , bull , miss);
+            }
+            
+            // if the user win the out
+            if (bull == 4)
+            {
+                winOfUser(leftTries);
+                goto ENDOFUSER;
+
+            }        
+            
+            else if (bull != 4 && tries == 0)
+            {
+                loseOfUser(finalNum);
+                goto ENDOFUSER;
+            }
         } while (tries >= 1 || bull != 4);
 
         ENDOFUSER:
         return 0;
+}
+
+void winOfUser(int leftTries)
+{
+    int endTry = 0;
+    endTry == leftTries - tries;
+    printf("\n4 HITS YOU WON!!!\n");
+    printf("\nIt took you only %d guesses, you are a professional code breaker!", leftTries);
+}
+
+void loseOfUser(int finalNum)
+{
+    printf("\nOOOOHHHH!!! Pancratius won and bought all of Hanukkah's gifts.\n");
+    printf("Nothing left for you...\n");
+    printf("The secret password was %d\n", finalNum);
 }

@@ -1,17 +1,28 @@
 #include <stdio.h>
 #include <conio.h>
 
-void helloWorld();
-
-int x = 4;
+void test();
+void test2(int try);
 
 int main(void)
 {
-    helloWorld();
+    test();
     return 0;
 }
 
- void helloWorld()
- {
-     printf
- }
+void test()
+{
+int try = 20;
+test2(try);
+}
+
+void test2(int try)
+{
+
+test3(try);
+}
+
+test3(int try)
+{
+    printf("%d", try);
+}
