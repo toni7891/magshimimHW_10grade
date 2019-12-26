@@ -2,25 +2,30 @@
 #include <time.h>
 #include <stdlib.h>
 #include <conio.h>
-#include <math.h>
 
-#define POWER1 1000
-#define POWER2 100
-#define POWER3 10
 
+// function declaration
 void randNumber();
 
-int getInput(int num1, int num2, int num3, int num4 , int finalNum);
+int getUserInput(int num1, int num2, int num3, int num4 , int finalNum);
+
+int checkUserInput(int num1, int num2, int num3, int num4, int x1, int x2, int x3, int x4, int bull, int miss);
+
+void loseOfUser(int finalNum);
 
 void winOfUser(int leftTries);
 
-    int tries = 0;
+
+// global variabel's
+int tries = 0;
+int choice = 0;
+int miss = 0;
+int bull = 0;
 
 // user instructions
 // and getting the game mood (with the amount of tries)
 int main(void)
 {
-    int choice = 0;
     char again;
     START:
         printf("\nWelcome to  MAGSHIMIM CODE - BREAKER !!!\n");
@@ -46,7 +51,7 @@ int main(void)
         scanf("%d", &choice);
         } while (choice < 1 || choice > 4);
 
-
+        // choosing game mode 
         switch (choice)
         {
         case 1:
@@ -119,19 +124,21 @@ void randNumber()
     num4 = (rand() % 6) + 1;
     }
 
+    // finaNum used to print the number in case user lost the game 
     finalNum = (num1 * 1000) + (num2 * 100) + (num3 * 10) + (num4 * 1);
-    
-    getInput(num1, num2, num3, num4 , finalNum);
+
+    getUserInput(num1, num2, num3, num4, finalNum);
 }
 
 // function that keeps the game 'alive'
 // like the main function of the game 
-int getInput(int num1, int num2, int num3, int num4 , int finalNum , int choice)
+int getUserInput(int num1, int num2, int num3, int num4 , int finalNum)
 {
     char x1;
     char x2;
     char x3;
     char x4;
+
     int miss = 0;
     int bull = 0;
     int leftTries = tries;
@@ -139,114 +146,139 @@ int getInput(int num1, int num2, int num3, int num4 , int finalNum , int choice)
     // loop to keep the game till the tries number end or the player wins
     do
     {
+
         // getting user input number
         INPUT:
-            
-            if (tries == 0)
-            {
-                goto ENDOFUSER;
-            }
+
+            // if the game mode is normal print the request with "guesses left"
             if (choice == 1 || choice == 2 || choice == 3)
             {
             printf("\nWrite your guess (only 1-6, no ENTER is needed)\n%d guesses left\n", tries);
             }
 
+            // if the game mode is crazy print the request for guess without how much guesses left
             else if(choice == 4)
             {
                 printf("\nWrite your guess (only 1-6, no ENTER is needed)\n");
             }
 
+            // getting the input from the user 
             printf("%d\n", finalNum);
             x1 = getche();
             x2 = getche();
             x3 = getche();
             x4 = getche();
 
+            // getting normal numbers from " Keyboard Key Code "
             x1 = x1 - 48;
             x2 = x2 - 48;
             x3 = x3 - 48;
             x4 = x4 - 48;
 
+            // ensure that the input is vaild
             if (x1 < 1 || x1 > 6 || x2 < 1 || x2 > 6 || x3 < 1 || x3 > 6 || x4 < 1 || x4 > 6)
             {
                 printf("Only 1-6 are allowed, try again!\n");
                 goto INPUT;
             }
 
-            // getting back the misses and bull to 0
-            miss = 0;
-            bull = 0;
-            
-            //remove one try
-            tries = tries - 1;
+            //function to check bulls and miss by the input of the user
+            checkUserInput(num1, num2, num3, num4, x1, x2, x3, x4, bull, miss, finalNum);
 
-            // checking bulls and misses
-            if (x1 == num2 || x1 == num3 || x1 == num4)
-            {
-                miss = miss + 1;  
-            }
-
-            else if (x1 == num1)
-            {
-                bull = bull + 1;
-            }
-
-            if (x2 == num1 || x2 == num3 || x2 == num4)
-            {
-                miss = miss + 1;
-            }
-
-            else if (x2 == num2)
-            {
-                bull = bull + 1;
-            }
-
-            
-            if (x3 == num2 || x3 == num1 || x3 == num4)
-            {
-                miss = miss + 1;
-            }
-
-            else if (x3 == num3)
-            {
-                bull = bull + 1;
-            }
-
-            if (x4 == num2 || x4 == num1 || x4 == num3)
-            {
-                miss = miss + 1;
-            }
-
-            else if (x4 == num4)
-            {
-                bull = bull + 1;
-            }
-
-            // out put of bull and misses
-            if (bull != 4)
-            {
-            printf("\nYou got\t %d HITS\t %d MISSES." , bull , miss);
-            }
-            
-            // if the user win the out
-            if (bull == 4)
-            {
-                winOfUser(leftTries);
-                goto ENDOFUSER;
-
-            }        
-            
-            else if (bull != 4 && tries == 0)
-            {
-                loseOfUser(finalNum);
-                goto ENDOFUSER;
-            }
         } while (tries >= 1 || bull != 4);
 
         ENDOFUSER:
         return 0;
 }
 
+
+// function to check bulls and miss by the input of the user
+int checkUserInput(int num1, int num2, int num3, int num4, int x1, int x2, int x3, int x4, int bull, int miss , int finalNum)
+{
+    
+    int leftTries = tries;
+
+    // getting back the misses and bull to 0
+    miss = 0;
+    bull = 0;
+
+    // if the user dont have any tries left --> user lose --> call loseOfUser and end this function
+    if (tries == 0)
+    {
+        loseOfUser(finalNum);
+        goto ENDOFUSER;
+    }
+
+    // remove one try every guess
+    tries = tries - 1;
+
+
+    // checking bulls and misses
+    if (x1 == num2 || x1 == num3 || x1 == num4)
+    {
+        miss = miss + 1;
+    }
+
+    else if (x1 == num1)
+    {
+        bull = bull + 1;
+    }
+
+    if (x2 == num1 || x2 == num3 || x2 == num4)
+    {
+        miss = miss + 1;
+    }
+
+    else if (x2 == num2)
+    {
+        bull = bull + 1;
+    }
+
+    if (x3 == num2 || x3 == num1 || x3 == num4)
+    {
+        miss = miss + 1;
+    }
+
+    else if (x3 == num3)
+    {
+        bull = bull + 1;
+    }
+
+    if (x4 == num2 || x4 == num1 || x4 == num3)
+    {
+        miss = miss + 1;
+    }
+
+    else if (x4 == num4)
+    {
+        bull = bull + 1;
+    }
+
+
+    // printf out the amount of bull and misses
+    if (bull != 4)
+    {
+        printf("\nYou got\t %d HITS\t %d MISSES.", bull, miss);
+    }
+
+    if (bull == 4)
+    {
+        winOfUser(leftTries);
+        goto ENDOFUSER;
+    }
+
+    // if the the user loses the game
+    else if (bull != 4 && tries == 0)
+    {
+        loseOfUser(finalNum);
+        goto ENDOFUSER;
+    }
+    ENDOFUSER:
+    return 0;
+}
+
+
+// function to printf in case of win
 void winOfUser(int leftTries)
 {
     int endTry = 0;
@@ -255,9 +287,13 @@ void winOfUser(int leftTries)
     printf("\nIt took you only %d guesses, you are a professional code breaker!", leftTries);
 }
 
+
+// function to printf in case of lose
 void loseOfUser(int finalNum)
 {
     printf("\nOOOOHHHH!!! Pancratius won and bought all of Hanukkah's gifts.\n");
     printf("Nothing left for you...\n");
     printf("The secret password was %d\n", finalNum);
 }
+
+

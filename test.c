@@ -1,24 +1,20 @@
 #include <stdio.h>
 #include <conio.h>
 
-void test();
-void test2(int try);
+void test3(int try);
+void test2();
 
 int main(void)
 {
-    test();
+    test2();
     return 0;
 }
 
-void test()
-{
-int try = 20;
-test2(try);
-}
 
-void test2(int try)
-{
 
+void test2()
+{
+int try = 3456;
 test3(try);
 }
 
