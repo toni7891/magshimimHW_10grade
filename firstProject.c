@@ -13,11 +13,12 @@ int randomNumber();
 
 int getChoice();
 
-int choice = 0;
+int trys = 0;
 
 int main(void)
 {
-
+    int choice = 0;
+    
     do
     {
     printf("Welcome to  MAGSHIMIM CODE - BREAKER !!!\n");
@@ -45,9 +46,7 @@ int main(void)
 
 void difficultyLevel(int choice)
 {
-    srand(time(0))
-
-    int trys = 0;
+    srand(time(0));
 
     switch (choice)
     {
@@ -85,7 +84,7 @@ int randomNumber()
     numberRandom3 = (rand() % 6) + 1;
     numberRandom4 = (rand() % 6) + 1;
 
-    finalNum = (pow(numberRandom1 ,POWER1)) + (pow(numberRandom2 , POWER2)) + (pow(numberRandom3 , POWER3)) + (numberRandom4);
+    finalNum = pow(numberRandom1,POWER1) + pow(numberRandom2,POWER2)
 
     return finalNum;
 }
@@ -93,32 +92,45 @@ int randomNumber()
 int getChoice(int choice)
 {
     choice = 0;
-
+    do while ( /* condition */)
+    {
+    
     scanf("Make a choice: %d", &choice);
+    }while ( /* condition */)
+    
     return choice;
 }
 
 
-void keepAlive()
-{
-    if (/* condition */)
-}
+
 
 int getInput()
 {
     int input = 0;
-    while (a1 == b1 || a1 == c1 || a1 == d1 || b1 == c1 || b1 == d1 || c1 == d1 || input< 123 || n>6666)
+
+    char x1 = 0;
+    char x2 = 0;
+    char x3 = 0;
+    char x4 = 0;
+    int final = 0;
+
+    do 
     {
-    
     printf("Write your guess (only 1-6, no ENTER is needed)\n%d guesses left" , );
     scanf("%d",&input);
 
-    d1 = input % 10;
-    c1 = (input / 10) % 10;
-    b1 = (input / 100) % 10;
-    a1 = (n/1000) %10;
-    
+    if (input != 1 ||input != 2 || input != 3 ||input != 4 || input !=5 || input != 6)
+    {
+        printf("Only 1-6 are allowed, try again!");
     }
+    }while (input != 1 ||input != 2 || input != 3 ||input != 4 || input !=5 || input != 6); 
+
+    x1 = getche();
+    x2 = getche();
+    x3 = getche();
+    x4 = getche();
+
+
 }
 
 

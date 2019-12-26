@@ -2,14 +2,15 @@
 #include <time.h>
 #include <stdlib.h>
 #include <conio.h>
+#include <math.h>
 
 #define POWER1 1000
 #define POWER2 100
 #define POWER3 10
 
-void gamemode(choice);
-
 int randNumber();
+
+int getUserInput(int choice)
 
 int trys = 0;
 
@@ -41,26 +42,35 @@ int main(void)
     switch (choice)
     {
     case 1:
-        trys = 20;    
+        trys = 20; 
+        getUserInput(trys);
         break;
 
     case 2:
         trys = 15;
+        getUserInput(trys);
         break;
 
     case 3:
         trys = 10;
+        getUserInput(trys);
         break;
 
     case 4:
         srand(time(0));
         trys = (rand() % 25) + 1;
+        getUserInput(trys);
         break;
     }
+}
 
-    while (a==b||a==c||a==d||b==c||b==d||c==d)
-    {
-    
+
+    return 0;
+}
+
+int randNumber()
+{
+
     int num1 = 0;
     int num2 = 0;
     int num3 = 0;
@@ -73,48 +83,39 @@ int main(void)
     num2 = (rand() % 6) + 1;
     num3 = (rand() % 6) + 1;
     num4 = (rand() % 6) + 1;
-
-    finalNum = (pow(numberRandom1 ,POWER1)) + (pow(numberRandom2 , POWER2)) + (pow(numberRandom3 , POWER3)) + (numberRandom4);
-
+    
+    finalNum = (num1 * POWER1) + (num2 * POWER2) + (num3 * POWER3) + (num4 * 1);
+    
     return finalNum;
-
 }
 
 
-    return 0;
-}
-
-int randNumber()
+int getInput()
 {
+    char x1;
+    char x2;
+    char x3;
+    char x4;
 
-    while (num1==num2||num1==num3||num1==num4||num2==num3||num2==num4||num3==num4)
+    do 
     {
-        int num1 = 0;
-        int num2 = 0;
-        int num3 = 0;
-        int num4 = 0;
-        int finalNum = 0;
-
-        srand(time(0));
-
-        num1 = (rand() % 6) + 1;
-        num2 = (rand() % 6) + 1;
-        num3 = (rand() % 6) + 1;
-        num4 = (rand() % 6) + 1;
-
-    }
-    
-    finalNum = (pow(num1 ,POWER1)) + (pow(num2 , POWER2)) + (pow(num3 , POWER3)) + (num4);
-    
-    return finalNum;
-}
-
-//reference : https://stackoverflow.com/questions/41383062/c-how-to-break-scanf-with-no-enter-and-no-string
-int getUserInput()
-{
-    int input = 0;
-
     printf("Write your guess (only 1-6, no ENTER is needed)\n%d guesses left" , );
+    
+    x1 = getche();
+    x2 = getche();
+    x3 = getche();
+    x4 = getche();
+
+    if (x1 < 1 || x1 > 6 || x2 < 1 || x2 > 6 || x3 < 1 || x3 > 6 || x4 < 1 || x4 > 6)
+    {
+        printf("Only 1-6 are allowed, try again!");
+    }
+    }while (x1 < 1 || x1 > 6 || x2 < 1 || x2 > 6 || x3 < 1 || x3 > 6 || x4 < 1 || x4 > 6); 
+
+    if ()
+    {
+    
+    }
     
 }
 
