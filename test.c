@@ -1,24 +1,24 @@
 #include <stdio.h>
-#include <conio.h>
 
-void test3(int try);
-void test2();
+void test();
+int test2();
 
 int main(void)
 {
-    test2();
-    return 0;
+test();
+return 0;
 }
 
-q34twsergthg
-
-void test2()
+void test()
 {
-int try = 3456;
-test3(try);
+    if (test2() == 4)
+    {
+        printf("yes");
+    }
 }
 
-test3(int try)
+int test2()
 {
-    printf("%d", try);
+    int bull = 4;
+    return bull;
 }
