@@ -1,3 +1,38 @@
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+/*                                                                                                                                               */
+/*    ##### #    # ######      ##   #    # ##### #    #  ####  #####     #  ####     #    #  ####  #####    ######  ####  #    # #    # #####    */
+/*      #   #    # #          #  #  #    #   #   #    # #    # #    #    # #         ##   # #    #   #      #      #    # #    # ##   # #    #   */
+/*      #   ###### #####     #    # #    #   #   ###### #    # #    #    #  ####     # #  # #    #   #      #####  #    # #    # # #  # #    #   */
+/*      #   #    # #         ###### #    #   #   #    # #    # #####     #      #    #  # # #    #   #      #      #    # #    # #  # # #    #   */
+/*      #   #    # #         #    # #    #   #   #    # #    # #   #     # #    #    #   ## #    #   #      #      #    # #    # #   ## #    #   */
+/*      #   #    # ######    #    #  ####    #   #    #  ####  #    #    #  ####     #    #  ####    #      #       ####   ####  #    # #####    */
+/*                                                                                                                                               */
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+/*                                                                                                                                               */
+/*                      ### ###                                               #######  #####   #####    #   ### ###                              */
+/*                      ### ###   ##   #    #   ##      #####  ####  #    # # #    #  #     # #     #  ##   ### ###                              */
+/*                       #   #   #  #  #   #   #  #       #   #    # ##   # #     #   #     # #     # # #    #   #                               */
+/*                              #    # ####   #    #      #   #    # # #  # #    #     #####   ######   #                                        */
+/*                              ###### #  #   ######      #   #    # #  # # #   #     #     #       #   #                                        */
+/*                              #    # #   #  #    #      #   #    # #   ## #   #     #     # #     #   #                                        */
+/*                              #    # #    # #    #      #    ####  #    # #   #      #####   #####  #####                                      */
+/*                                                                                                                                               */
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+/*                                                                                                                                               */
+/*                        ### ###                                                                                          ### ###               */
+/*                        ### ###     ##   #    #   ##      #####  ####  #    # #   #    #    # ###### #####  # #    #     ### ###               */
+/*                         #   #     #  #  #   #   #  #       #   #    # ##   #  # #     #    # #      #    # # ##   #      #   #                */
+/*                                  #    # ####   #    #      #   #    # # #  #   #      #    # #####  #    # # # #  #                           */
+/*                                  ###### #  #   ######      #   #    # #  # #   #      #    # #      #####  # #  # #                           */
+/*                                  #    # #   #  #    #      #   #    # #   ##   #       #  #  #      #   #  # #   ##                           */
+/*                                  #    # #    # #    #      #    ####  #    #   #        ##   ###### #    # # #    #                           */              */
+/*                                                                                                                                               */
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
 #include <stdio.h>
 #include <time.h>
 #include <stdlib.h>
@@ -8,6 +43,7 @@
 #define POWER2 100
 #define POWER3 10
 
+// all function's
 void randNumber(int choice, int triesF);
 
 int getInputAndCheck(int num1, int num2, int num3, int num4, int finalNum, int choice, int triesF);
@@ -16,18 +52,18 @@ void winOfUser(int leftTries, int choice, int triesF);
 
 void loseOfUser(int finalNum);
 
+// global variabel's 
 int tries = 0;
-
 int triesF = 0;
 
 // user instructions
-// and getting the game mood (with the amount of tries)
-
+// and getting the game mode (with the amount of tries)
 int main(void)
 {
     int choice = 0;
     char again;
-START:
+
+    START:
     printf("\nWelcome to  MAGSHIMIM CODE - BREAKER !!!\n");
     printf("\nA secret password was chosen to protect the credit card of Pancratius,\n");
     printf("the descendant of Antiochus.\n");
@@ -144,6 +180,7 @@ int getInputAndCheck(int num1, int num2, int num3, int num4, int finalNum, int c
     // loop to keep the game till the tries number end or the player wins
     do
     {
+
     // getting user input number
     INPUT:
 
@@ -253,6 +290,8 @@ ENDOFUSER:
     return 0;
 }
 
+
+// print in case user wins the game 
 void winOfUser(int leftTries, int choice, int triesF)
 {
     int endTry = 0;
@@ -281,6 +320,8 @@ void winOfUser(int leftTries, int choice, int triesF)
     printf("\nIt took you only %d guesses, you are a professional code breaker!", endTry);
 }
 
+
+// print in case the player loses the game 
 void loseOfUser(int finalNum)
 {
     printf("\nOOOOHHHH!!! Pancratius won and bought all of Hanukkah's gifts.\n");
