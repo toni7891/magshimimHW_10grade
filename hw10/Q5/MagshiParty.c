@@ -41,7 +41,7 @@ int main(void)
 	searchAge(guestAges, size);
 	lookingFor(guestAges, size);
 	printf("\nYoungest guest age: %d", mostYoung(guestAges, size));
-	printf("Oldest guest age: %d", oldestAge(guestAges, size));
+	printf("\nOldest guest age: %d\n", oldestAge(guestAges, size));
 
 	return 0;
 }
@@ -68,6 +68,12 @@ float averageAge(float guestAges[], float size)
 	return avg;
 }
 
+/*
+Function will return number of how many people under 12
+input: age array, number of guests
+output: how many under 12
+*/
+
 int numberUnder12(float guestAges[], float size)
 {
 	int i = 0;
@@ -83,6 +89,12 @@ int numberUnder12(float guestAges[], float size)
 	
 	return numOfUnder12;
 }
+
+/*
+Function will ask for guest age and print out if guest at this age is found or not
+input: age array, number of guests , age to search
+output: guest found or not
+*/
 
 void searchAge(float guestAges[], float size)
 {	
@@ -109,6 +121,12 @@ void searchAge(float guestAges[], float size)
 	}
 }
 
+/*
+Function will check if there is 2 or more people thats at the same age
+input: age array, number of guests , age to find pair
+output: if there is a pair or no
+*/
+
 void lookingFor(float guestAges[], float size)
 {
 	int flag = 0;
@@ -120,13 +138,16 @@ void lookingFor(float guestAges[], float size)
 
 	for (i = 0; i < size; i++)
 	{
-		if (guestAges[i] == ageOfLooking)
+		if (flag < 2)
 		{
-			flag += 1;
+			if (guestAges[i] == ageOfLooking)
+			{
+				flag += 1;
+			}
 		}
 	}
 	
-	if (flag >= 2)
+	if (flag = 2)
 	{
 		printf("A couple in the same age was found!");
 	}
@@ -136,6 +157,12 @@ void lookingFor(float guestAges[], float size)
 		printf("No couples found...");
 	}
 }
+
+/*
+Function will return the age of the youngest guest
+input: age array, number of guests
+output: the age of the youngest guest in the list
+*/
 
 int mostYoung(float guestAges[], float size)
 {
@@ -156,6 +183,12 @@ int mostYoung(float guestAges[], float size)
 	return minAge;
 }
 
+/*
+Function will return the age of the oldest guest
+input: age array, number of guests
+output: the age of the oldest guest in the list
+*/
+
 int oldestAge(float guestAges[], float size)
 {
 	int currentAge = 0;
@@ -170,7 +203,7 @@ int oldestAge(float guestAges[], float size)
 		}
 	}
 
-	minAge = currentAge;
-	
+	maxAge = currentAge;
+
 	return maxAge;
 }
