@@ -16,6 +16,8 @@ float averageAge(float guestAges[], float size);
 int numberUnder12(float guestAges[], float size);
 void searchAge(float guestAges[], float size);
 void lookingFor(float guestAges[], float size);
+int mostYoung(float guestAges[], float size);
+int oldestAge(float guestAges[], float size);
 
 int main(void)
 {
@@ -37,8 +39,9 @@ int main(void)
 	printf("Average age: %.2f\n", averageAge(guestAges, size));
 	printf("Number of kids 12 and under: %d\n", numberUnder12(guestAges, size));
 	searchAge(guestAges, size);
-
-
+	lookingFor(guestAges, size);
+	printf("\nYoungest guest age: %d", mostYoung(guestAges, size));
+	printf("Oldest guest age: %d", oldestAge(guestAges, size));
 
 	return 0;
 }
@@ -112,12 +115,12 @@ void lookingFor(float guestAges[], float size)
 	int i = 0;
 	int ageOfLooking = 0;
 
-	printf("Enter age of guest looking for friend: ");
+	printf("\nEnter age of guest looking for friend: ");
 	scanf("%d" , &ageOfLooking);
 
 	for (i = 0; i < size; i++)
 	{
-		if (guestAges == ageOfLooking)
+		if (guestAges[i] == ageOfLooking)
 		{
 			flag += 1;
 		}
@@ -125,7 +128,49 @@ void lookingFor(float guestAges[], float size)
 	
 	if (flag >= 2)
 	{
-		printf("");
+		printf("A couple in the same age was found!");
 	}
 
+	if (flag < 2)
+	{
+		printf("No couples found...");
+	}
+}
+
+int mostYoung(float guestAges[], float size)
+{
+	int currentAge = 99999;
+	int minAge = 0;
+	int i = 0;
+
+	for (i = 0; i < size; i++)
+	{
+		if (guestAges[i] < currentAge)
+		{
+			currentAge = guestAges[i]; 
+		}
+	}
+	
+	minAge = currentAge;
+
+	return minAge;
+}
+
+int oldestAge(float guestAges[], float size)
+{
+	int currentAge = 0;
+	int maxAge = 0;
+	int i = 0;
+
+	for (i = 0; i < size; i++)
+	{
+		if (guestAges[i] > currentAge)
+		{
+			currentAge = guestAges[i];
+		}
+	}
+
+	minAge = currentAge;
+	
+	return maxAge;
 }
