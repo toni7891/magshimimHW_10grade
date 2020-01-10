@@ -7,6 +7,7 @@
 
 int main(void)
 {
+    //hiih
     int numArr[10000] = {0};
     int i = 0;
     int j = 0;
