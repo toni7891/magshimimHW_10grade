@@ -26,32 +26,32 @@ int main(void)
 
         if (randNum == 1)
         {
-            numberOne = numberOne + 1;
+            numberOne += 1;
         }
 
         else if (randNum == 2)
         {
-            numberTwo = numberTwo + 1;
+            numberTwo += 1;
         }
 
         else if (randNum == 3)
         {
-            numberThree = numberThree + 1;
+            numberThree += 1;
         }
 
         else if (randNum == 4)
         {
-            numberFour = numberFour + 1;
+            numberFour += 1;
         }
 
         else if (randNum == 5)
         {
-            numberFive = numberFive + 1;
+            numberFive += 1;
         }
 
         else
         {
-            numberSix = numberSix + 1;
+            numberSix += 1;
         }
     }
 
