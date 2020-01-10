@@ -161,8 +161,10 @@ void randNumber(int choice, int triesF)
         num4 = (rand() % 6) + 1;
     }
 
+    //getting final 
     finalNum = (num1 * 1000) + (num2 * 100) + (num3 * 10) + (num4 * 1);
 
+    // main game function with all of the game part's 
     getInputAndCheck(num1, num2, num3, num4, finalNum, choice, triesF);
 }
 
