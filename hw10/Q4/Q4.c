@@ -55,7 +55,7 @@ int main(void)
         }
     }
 
-    printf("number 1 was played: %d times\nnumber 2 was played: %d times\nnumber 3 was played: %d times\nnumber 4 was played: %d times\nnumber 5 was played: %d times\nnumber 6 was played: %d times")
+    printf("number 1 was played: %d times\nnumber 2 was played: %d times\nnumber 3 was played: %d times\nnumber 4 was played: %d times\nnumber 5 was played: %d times\nnumber 6 was played: %d times" , numberOne , numberTwo , numberThree , numberFour , numberFive , numberSix);
     
 return 0;
 }
