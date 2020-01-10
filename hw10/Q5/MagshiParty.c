@@ -28,6 +28,8 @@ int main(void)
 	109, 40, 109, 5, 2, 55, 54, 80, 19, 99, 61, 69, 8, 108, 9, 14, 49, 44, 48, 22, 
 	31, 18, 14, 35};
 
+	printf("the avg number is:");
+
 	return 0;
 }
 
@@ -36,18 +38,19 @@ Function will return average age of party guests
 input: age array, number of guests
 output: average age
 */
+
 float averageAge(int ages[], int size)
 {
 	float avg = 0;
 	int i = 0;
+	int sum = 0;
 	// TODO: calculate average age
 
 	for (i = 0; i < size; i++)
 	{
-		
-
+			sum = sum + ages[i]; 
 	}
-	
-	
+
+	avg = sum / size;
 	return avg;
 }
