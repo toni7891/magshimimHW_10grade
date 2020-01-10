@@ -9,7 +9,6 @@ int main(void)
 {
     int numArr[10000] = {0};
     int i = 0;
-    int j = 0;
     int randNum = 0;
     int numberOne = 0;
     int numberTwo = 0;
@@ -18,11 +17,11 @@ int main(void)
     int numberFive = 0;
     int numberSix = 0;
 
+    srand(time(NULL));
+
     for (i = 0; i < COUNT; i++)
     {
-        srand(time(NULL));
-
-        randNum = 1 + (rand() % NUM_OF_FACES);
+        randNum = (rand() % NUM_OF_FACES) + 1;
         numArr[i] = randNum;
 
         if (randNum == 1)
@@ -50,7 +49,7 @@ int main(void)
             numberFive = numberFive + 1;
         }
 
-        else if (randNum == 6)
+        else
         {
             numberSix = numberSix + 1;
         }
