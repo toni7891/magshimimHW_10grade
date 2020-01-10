@@ -39,8 +39,14 @@ output: average age
 float averageAge(int ages[], int size)
 {
 	float avg = 0;
-	
+	int i = 0;
 	// TODO: calculate average age
+
+	for (i = 0; i < size; i++)
+	{
+		
+
+	}
 	
 	
 	return avg;

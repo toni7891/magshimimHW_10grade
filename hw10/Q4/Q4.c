@@ -3,7 +3,6 @@
 #include <stdlib.h>
 
 #define TIMES_TO_PLAY 10000
-#define COUNT 10000
 #define NUM_OF_FACES 6
 
 int main(void)
@@ -20,7 +19,7 @@ int main(void)
 
     srand(time(NULL));
 
-    for (i = 0; i < COUNT; ++i)
+    for (i = 0; i < TIMES_TO_PLAY; ++i)
     {
         randNum = (rand() % NUM_OF_FACES) + 1;
         numArr[i] = randNum;
