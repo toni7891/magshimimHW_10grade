@@ -7,7 +7,6 @@
 
 int main(void)
 {
-    //hiih
     int numArr[10000] = {0};
     int i = 0;
     int j = 0;
@@ -21,8 +20,9 @@ int main(void)
 
     for (i = 0; i < COUNT; i++)
     {
-        srand(time(0));
-        randNum = (rand() % NUM_OF_FACES) + 1;
+        srand(time(NULL));
+
+        randNum = 1 + (rand() % NUM_OF_FACES);
         numArr[i] = randNum;
 
         if (randNum == 1)
@@ -30,33 +30,33 @@ int main(void)
             numberOne = numberOne + 1;
         }
 
-        if (randNum == 2)
+        else if (randNum == 2)
         {
             numberTwo = numberTwo + 1;
         }
 
-        if (randNum == 3)
+        else if (randNum == 3)
         {
             numberThree = numberThree + 1;
         }
 
-        if (randNum == 4)
+        else if (randNum == 4)
         {
             numberFour = numberFour + 1;
         }
 
-        if (randNum == 5)
+        else if (randNum == 5)
         {
             numberFive = numberFive + 1;
         }
 
-        if (randNum == 6)
+        else if (randNum == 6)
         {
             numberSix = numberSix + 1;
         }
     }
 
-    printf("number 1 was played: %d times\nnumber 2 was played: %d times\nnumber 3 was played: %d times\nnumber 4 was played: %d times\nnumber 5 was played: %d times\nnumber 6 was played: %d times" , numberOne , numberTwo , numberThree , numberFour , numberFive , numberSix);
-    
-return 0;
+    printf("number 1 was played: %d times\nnumber 2 was played: %d times\nnumber 3 was played: %d times\nnumber 4 was played: %d times\nnumber 5 was played: %d times\nnumber 6 was played: %d times", numberOne, numberTwo, numberThree, numberFour, numberFive, numberSix);
+
+    return 0;
 }
