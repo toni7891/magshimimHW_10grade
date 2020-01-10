@@ -34,7 +34,7 @@ int main(void)
 		31, 18, 14, 35};
 
 	printf("Average age: %.2f\n", averageAge(guestAges, size));
-	printf("Number of kids 12 and under: %d", numberUnder12(guestAges, size));
+	printf("Number of kids 12 and under: %d\n", numberUnder12(guestAges, size));
 	searchAge(guestAges, size);
 
 
@@ -85,7 +85,7 @@ void searchAge(float guestAges[], float size)
 	int i = 0;
 	int search = 0;
 	int isFound = 0;
-	printf("Enter age to search:");
+	printf("Enter age to search: ");
 	scanf("%d" , &search);
 
 	for (i = 0; i < size; i++)
@@ -103,6 +103,4 @@ void searchAge(float guestAges[], float size)
 	{
 		printf("No guest this age.");
 	}
-
-
 }
