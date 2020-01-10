@@ -18,6 +18,9 @@ bug report:
 5. gave to myGrades an index of length
 6. int first = myGrades; to "int first = myGrades[0];" (index of the first elemnt in array)
 7. changed arr to myGrades in initArray function 
+8. if the code stays as before my debug it will print in the first grade a number "2686720"
+this number is "magic number" because we didnt gave him a valid value
+to fix this we need to give the function initArray a pointer and give the array an index of elemnt
 */
 
 int * initArray(int myGrades[]);

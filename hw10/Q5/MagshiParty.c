@@ -8,11 +8,9 @@
 #include <stdlib.h>
 
 #define NUM_GUESTS 200
-#define FALSE 0
-#define TRUE !FALSE
 #define UNDER_AGE 12
 
-float averageAge(float guestAges[], float size);
+float averageAge(float guestAges[]);
 int numberUnder12(float guestAges[], float size);
 void searchAge(float guestAges[], float size);
 void lookingFor(float guestAges[], float size);
@@ -36,7 +34,7 @@ int main(void)
 		109, 40, 109, 5, 2, 55, 54, 80, 19, 99, 61, 69, 8, 108, 9, 14, 49, 44, 48, 22,
 		31, 18, 14, 35};
 
-	printf("Average age: %.2f\n", averageAge(guestAges, size));
+	printf("Average age: %.2f\n", averageAge(guestAges));
 	printf("Number of kids 12 and under: %d\n", numberUnder12(guestAges, size));
 	searchAge(guestAges, size);
 	lookingFor(guestAges, size);
@@ -52,19 +50,19 @@ input: age array, number of guests
 output: average age
 */
 
-float averageAge(float guestAges[], float size)
+float averageAge(float guestAges[])
 {
 	float avg = 0;
 	int i = 0;
 	float sum = 0;
 	// TODO: calculate average age
 
-	for (i = 0; i <= size; i++)
+	for (i = 0; i < NUM_GUESTS; ++i)
 	{
-		sum = sum + guestAges[i];
+		sum += guestAges[i];
 	}
 
-	avg = sum / size;
+	avg = sum / 200;
 	return avg;
 }
 
