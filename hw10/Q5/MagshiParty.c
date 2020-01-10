@@ -15,6 +15,7 @@
 float averageAge(float guestAges[], float size);
 int numberUnder12(float guestAges[], float size);
 void searchAge(float guestAges[], float size);
+void lookingFor(float guestAges[], float size);
 
 int main(void)
 {
@@ -103,4 +104,28 @@ void searchAge(float guestAges[], float size)
 	{
 		printf("No guest this age.");
 	}
+}
+
+void lookingFor(float guestAges[], float size)
+{
+	int flag = 0;
+	int i = 0;
+	int ageOfLooking = 0;
+
+	printf("Enter age of guest looking for friend: ");
+	scanf("%d" , &ageOfLooking);
+
+	for (i = 0; i < size; i++)
+	{
+		if (guestAges == ageOfLooking)
+		{
+			flag += 1;
+		}
+	}
+	
+	if (flag >= 2)
+	{
+		printf("");
+	}
+
 }
