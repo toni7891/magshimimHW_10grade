@@ -10,12 +10,15 @@
 #define NUM_GUESTS 200
 #define FALSE 0
 #define TRUE !FALSE
+#define UNDER_AGE 12
 
 float averageAge(float guestAges[], float size);
 int numberUnder12(float guestAges[], float size);
+void searchAge(float guestAges[], float size);
 
 int main(void)
 {
+
 	float size = NUM_GUESTS;
 	float guestAges[NUM_GUESTS] = {
 		42, 108, 95, 101, 90, 5, 79, 79, 83, 105, 66, 66, 2, 28, 2, 12, 116, 63, 28, 37,
@@ -30,7 +33,11 @@ int main(void)
 		109, 40, 109, 5, 2, 55, 54, 80, 19, 99, 61, 69, 8, 108, 9, 14, 49, 44, 48, 22,
 		31, 18, 14, 35};
 
-	printf("Average age: %.2f", averageAge(guestAges, size));
+	printf("Average age: %.2f\n", averageAge(guestAges, size));
+	printf("Number of kids 12 and under: %d", numberUnder12(guestAges, size));
+	searchAge(guestAges, size);
+
+
 
 	return 0;
 }
@@ -64,15 +71,38 @@ int numberUnder12(float guestAges[], float size)
 	
 	for (i = 0; i < size; i++)
 	{
-		if (guestAges[i] <= 12)
+		if ((int)guestAges[i] <= UNDER_AGE)
 		{
 			numOfUnder12 += 1;
-		}
-		
-
+		}	
 	}
 	
-	
-
 	return numOfUnder12;
+}
+
+void searchAge(float guestAges[], float size)
+{	
+	int i = 0;
+	int search = 0;
+	int isFound = 0;
+	printf("Enter age to search:");
+	scanf("%d" , &search);
+
+	for (i = 0; i < size; i++)
+	{
+		if (guestAges[i] == search)
+		{
+			isFound = 1;
+			printf("guest found!");
+			goto ENDOFRUN;
+		}
+	}
+	
+	ENDOFRUN:
+	if (isFound == 0)
+	{
+		printf("No guest this age.");
+	}
+
+
 }
