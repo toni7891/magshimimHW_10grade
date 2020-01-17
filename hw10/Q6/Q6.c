@@ -20,15 +20,15 @@ bug report:
 7. changed arr to myGrades in initArray function 
 8. if the code stays as before my debug it will print in the first grade a number "2686720"
 this number is "magic number" because we didnt gave him a valid value
-to fix this we need to give the function initArray a pointer and give the array an index of elemnt
+to fix this we need to give the function initArray a pointer and give to variabel first an index of elemnt to the function when you call her.
 */
 
-int * initArray(int myGrades[]);
+int *initArray(int myGrades[]);
 void printGrades(int first, int second);
 
 int main(void)
 {
-    int myGrades[ARR_LENGTH] = {0,0};
+    int myGrades[ARR_LENGTH] = {0, 0};
 
     initArray(myGrades);
 
@@ -45,7 +45,7 @@ input: array to change
 output: array with updated values
 */
 
-int * initArray(int myGrades[])
+int *initArray(int myGrades[])
 {
 
     printf("Enter grades in English and history: ");
