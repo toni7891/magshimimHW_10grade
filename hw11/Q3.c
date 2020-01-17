@@ -5,13 +5,21 @@
 
 int main(void)
 {
-char userInput[MAXINPUT];
 
-printf("Enter string (max length 100 chars)");
-gets(userInput);
-printf("%s" , userInput);
+    char userInput[MAXINPUT];
+    char reversed[MAXINPUT];
+    printf("Enter string (max length 100 chars)");
+    gets(userInput);
+    strcpy(reversed , userInput);
+    if (strcmp(userInput, reversed) == 0)
+    {
+        printf("Yes");
+    }
 
-
-
-return 0;
+    else
+    {
+        printf("No");
+    }
+    
+    return 0;
 }
