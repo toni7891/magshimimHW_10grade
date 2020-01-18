@@ -16,6 +16,7 @@ char findMin(char input[MAX_INPUT]);
 int main(void)
 {
     char input[MAX_INPUT];
+    char input2[MAX_INPUT];
     int i = 0;
     int id = 0;
     char help;
@@ -24,26 +25,28 @@ int main(void)
     printf("Enter a string:\n");
     fgets(input, MAX_INPUT, stdin);
 
+    strcpy(input2, input);
+
     printf("Most common: %c, 2nd most common: %c\n", findMax(input), findMin(input));
 
     help = findMax(input);
     help2 = findMin(input);
 
-    while (input[i] != '\0')
+    while (input2[i] != '\0')
     {
-        if (input[i] == help)
+        if (input2[i] == help)
         {
-            input[i] = help2;
+            input2[i] = help2;
         }
 
-        else if (input[i] == help2)
+        else if (input2[i] == help2)
         {
-            input[i] = help;
+            input2[i] = help;
         }
         i++;
     }
 
-    printf("swapped:\n%s", input);
+    printf("swapped:\n%s", input2);
     return 0;
 }
 
