@@ -49,40 +49,29 @@ int main(void)
 
 char findMax(char input[MAX_INPUT])
 {
-    int array[255] = {0}; // initialize all elements to 0
+    int letters[255] = {0}; // initialize all elements to 0
 
     int i = 0;
     int max = 0;
     int id = 0;
     char end;
-    int j = 0;
-    int count = 0;
 
     //find max
 
-    for (j = 0; input[j]; j++) // cycle through the string
-    {
-        if (input[j] != ' ') // checking if there is space
-        {
-            input[count++] = input[i];
-        }
-    }
-    input[count] = '\0';
-
     for (i = 0; input[i] != 0; i++)
     {
-        ++array[input[i]];
+        ++letters[input[i]];
     }
 
     // Find the letter that was used the most
-    max = array[0];
+    max = letters[0];
     id = 0;
 
     for (i = 0; input[i] != 0; i++)
     {
-        if (array[input[i]] > max)
+        if (letters[input[i]] > max)
         {
-            max = array[input[i]];
+            max = letters[input[i]];
             id = i;
         }
     }
@@ -95,14 +84,16 @@ char findMax(char input[MAX_INPUT])
 char findMin(char input[MAX_INPUT])
 {
     // count number of occurrences of every character.
-    int count[NO_OF_CHARS] = {0}, i;
+    int count[NO_OF_CHARS] = {0};
+    int i = 0;
+    int first = 0;
+    int second = 0;
     for (i = 0; input[i]; i++)
     {
         (count[input[i]])++;
     }
 
     // Traverse through the count[] and find second highest element.
-    int first = 0, second = 0;
     for (i = 0; i < NO_OF_CHARS; i++)
     {
         /* If current element is smaller than first then update both 
