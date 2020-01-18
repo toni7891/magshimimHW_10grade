@@ -1,56 +1,67 @@
-// A recursive C program to  
-// check whether a given number 
-// is palindrome or not 
-#include <stdio.h> 
-#include <string.h> 
-#include <stdbool.h> 
-  
-// A recursive function that 
-// check a str[s..e] is 
-// palindrome or not. 
-bool isPalRec(char str[],  
-              int s, int e) 
-{ 
-    // If there is only one character 
-    if (s == e) 
-    return true; 
-  
-    // If first and last 
-    // characters do not match 
-    if (str[s] != str[e]) 
-    return false; 
-  
-    // If there are more than  
-    // two characters, check if  
-    // middle substring is also  
-    // palindrome or not. 
-    if (s < e + 1) 
-    return isPalRec(str, s + 1, e - 1); 
-  
-    return true; 
-} 
-  
-bool isPalindrome(char str[]) 
-{ 
-int n = strlen(str); 
-  
-// An empty string is  
-// considered as palindrome 
-if (n == 0) 
-    return true; 
-  
-return isPalRec(str, 0, n - 1); 
-} 
-  
-// Driver Code 
-int main() 
-{ 
-    char str[] = "geeg"; 
-  
-    if (isPalindrome(str)) 
-    printf("Yes"); 
-    else
-    printf("No"); 
-  
-    return 0; 
-} 
+#include <stdio.h>
+#include <string.h>
+
+#define MAXINPUT 101
+
+int main(void)
+{
+    int result = 0;
+    int count = 0;
+    int i = 0;
+    int j = 0;
+    int id = 0;
+
+    char userInput[MAXINPUT] = {' '};
+    char reversed[MAXINPUT] = {' '};
+
+    printf("Enter string (max length 100 chars): \n");
+    fgets(userInput, MAXINPUT, stdin);
+
+    id = strlen(userInput);
+    printf("%d", id);
+
+    for (j = 0; userInput[j] != '\0'; j++)
+    {
+        if (userInput[j] == '\n')
+        {
+            userInput[j] = '\0';
+        }
+    }
+
+    id = strlen(userInput);
+    printf("\n%d", id);
+    // reference: geeks for geeks [https://www.geeksforgeeks.org/remove-spaces-from-a-given-string/]
+    for (i = 0; userInput[i]; i++) // cycle throw the string
+    {
+        if (userInput[i] != ' ') // checking if there is space
+        {
+            userInput[count++] = userInput[i];
+        }
+    }
+    userInput[count] = '\0';
+    id = strlen(userInput);
+    printf("\n%d", id);
+    printf("\n%s", userInput);
+
+    strcpy(reversed, userInput);
+
+    printf("%s\n", strrev(reversed));
+
+    result = strcmp(userInput, reversed);
+    if (result == 0)
+    {
+        printf("Yes");
+    }
+
+    else if (result == 1)
+    {
+        printf("No");
+    }
+
+    else if (result == -1)
+    {
+        printf("No");
+    }
+    
+    return 0;
+}
