@@ -24,7 +24,6 @@ int main(void)
     printf("Enter a string:\n");
     fgets(input, MAX_INPUT, stdin);
 
-
     printf("Most common: %c, 2nd most common: %c\n", findMax(input), findMin(input));
 
     help = findMax(input);
@@ -85,7 +84,7 @@ char findMax(char input[MAX_INPUT])
 char findMin(char input[MAX_INPUT])
 {
     // count number of occurrences of every character.
-    int count[MAX_INPUT] = {0};
+    int count[NO_OF_CHARS] = {0};
     int i = 0;
     int first = 0;
     int second = 0;
@@ -95,7 +94,7 @@ char findMin(char input[MAX_INPUT])
     }
 
     // Traverse through the count[] and find second highest element.
-    for (i = 0; i < MAX_INPUT; i++)
+    for (i = 0; i < NO_OF_CHARS; i++)
     {
         /* If current element is smaller than first then update both 
           first and second */
