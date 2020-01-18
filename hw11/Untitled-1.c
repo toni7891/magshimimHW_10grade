@@ -24,7 +24,6 @@ int main(void)
     printf("Enter a string:\n");
     fgets(input, MAX_INPUT, stdin);
 
-
     printf("Most common: %c, 2nd most common: %c\n", findMax(input), findMin(input));
 
     help = findMax(input);
@@ -50,29 +49,40 @@ int main(void)
 
 char findMax(char input[MAX_INPUT])
 {
-    int letters[255] = {0}; // initialize all elements to 0
+    int array[255] = {0}; // initialize all elements to 0
 
     int i = 0;
     int max = 0;
     int id = 0;
     char end;
+    int j = 0;
+    int count = 0;
 
     //find max
 
+    for (j = 0; input[j]; j++) // cycle through the string
+    {
+        if (input[j] != ' ') // checking if there is space
+        {
+            input[count++] = input[i];
+        }
+    }
+    input[count] = '\0';
+
     for (i = 0; input[i] != 0; i++)
     {
-        ++letters[input[i]];
+        ++array[input[i]];
     }
 
     // Find the letter that was used the most
-    max = letters[0];
+    max = array[0];
     id = 0;
 
     for (i = 0; input[i] != 0; i++)
     {
-        if (letters[input[i]] > max)
+        if (array[input[i]] > max)
         {
-            max = letters[input[i]];
+            max = array[input[i]];
             id = i;
         }
     }
@@ -85,17 +95,15 @@ char findMax(char input[MAX_INPUT])
 char findMin(char input[MAX_INPUT])
 {
     // count number of occurrences of every character.
-    int count[MAX_INPUT] = {0};
-    int i = 0;
-    int first = 0;
-    int second = 0;
+    int count[NO_OF_CHARS] = {0}, i;
     for (i = 0; input[i]; i++)
     {
         (count[input[i]])++;
     }
 
     // Traverse through the count[] and find second highest element.
-    for (i = 0; i < MAX_INPUT; i++)
+    int first = 0, second = 0;
+    for (i = 0; i < NO_OF_CHARS; i++)
     {
         /* If current element is smaller than first then update both 
           first and second */

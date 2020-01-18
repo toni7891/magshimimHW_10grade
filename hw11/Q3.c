@@ -28,7 +28,7 @@ int main(void)
     }
 
     // reference: geeks for geeks [https://www.geeksforgeeks.org/remove-spaces-from-a-given-string/]
-    for (i = 0; userInput[i]; i++) // cycle throw the string
+    for (i = 0; userInput[i]; i++) // cycle through the string
     {
         if (userInput[i] != ' ') // checking if there is space
         {

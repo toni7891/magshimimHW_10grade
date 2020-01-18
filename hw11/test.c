@@ -1,67 +1,47 @@
 #include <stdio.h>
 #include <string.h>
 
-#define MAXINPUT 101
-
-int main(void)
+#define MAX_INPUT 151
+int main()
 {
-    int result = 0;
-    int count = 0;
-    int i = 0;
-    int j = 0;
+
+    char input[MAX_INPUT] = {' '};
     int id = 0;
+    int jj = 0;
+    int ii = 0;
+    int xx = 0;
+    int iden = 0;
+    char max = ' ';
+    char min = ' ';
+    char letters[MAX_INPUT] = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'};
+    int a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z;
 
-    char userInput[MAXINPUT] = {' '};
-    char reversed[MAXINPUT] = {' '};
+    printf("Enter a string: ");
+    fgets(input, MAX_INPUT, stdin);
 
-    printf("Enter string (max length 100 chars): \n");
-    fgets(userInput, MAXINPUT, stdin);
+    id = strlen(input);
 
-    id = strlen(userInput);
-    printf("%d", id);
-
-    for (j = 0; userInput[j] != '\0'; j++)
+    for (jj = 0;letters[jj] < id; jj++)
     {
-        if (userInput[j] == '\n')
+        for ( xx = 0; input[xx] < id; xx++)
         {
-            userInput[j] = '\0';
+            if (input > max)
+            {
+                iden += 1;
+                max = input[xx]
+            }
+            
+        } 
+    }
+
+
+    for (ii = 0; ii < MAX_INPUT; ii++)
+    {
+        if (letters[ii] > max)
+        {
+            max = letters[ii];
         }
     }
 
-    id = strlen(userInput);
-    printf("\n%d", id);
-    // reference: geeks for geeks [https://www.geeksforgeeks.org/remove-spaces-from-a-given-string/]
-    for (i = 0; userInput[i]; i++) // cycle throw the string
-    {
-        if (userInput[i] != ' ') // checking if there is space
-        {
-            userInput[count++] = userInput[i];
-        }
-    }
-    userInput[count] = '\0';
-    id = strlen(userInput);
-    printf("\n%d", id);
-    printf("\n%s", userInput);
-
-    strcpy(reversed, userInput);
-
-    printf("%s\n", strrev(reversed));
-
-    result = strcmp(userInput, reversed);
-    if (result == 0)
-    {
-        printf("Yes");
-    }
-
-    else if (result == 1)
-    {
-        printf("No");
-    }
-
-    else if (result == -1)
-    {
-        printf("No");
-    }
-    
     return 0;
 }
