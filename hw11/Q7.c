@@ -52,11 +52,22 @@ char findMax(char input[MAX_INPUT])
     int letters[255] = {0}; // initialize all elements to 0
 
     int i = 0;
+    int j = 0;
     int max = 0;
     int id = 0;
     char end;
+    int count = 0;
 
     //find max
+
+    for (j = 0; input[j]; j++) // cycle through the string
+    {
+        if (input[j] != ' ') // checking if there is space
+        {
+            input[count++] = input[j];
+        }
+    }
+    input[count] = '\0';
 
     for (i = 0; input[i] != 0; i++)
     {
