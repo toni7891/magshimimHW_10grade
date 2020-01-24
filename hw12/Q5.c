@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <stdlib>
+#include <stdlib.h>
 #include <string.h>
 
 #define WORDS 10
@@ -14,11 +14,19 @@ int main(void)
 
     for (i = 0; i < WORDS; i++)
     {
+            scanf("%s", input[i]);
+    }
+
+    // check panagram algo
+    for (i = 0; i < WORDS; i++)
+    {
         for (j = 0; j < LETTERS; j++)
         {
-            fgets();
+            /* code */
         }
+        
     }
+    
     
 
     return 0;
