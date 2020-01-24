@@ -1,43 +1,57 @@
 #include <stdio.h>
 #include <string.h>
 
-#define NUM_OF_NAMES 10
-#define NUM_OF_LETTERS 50
+#define NAMES 10
+#define LETTERS 50
 
-void shrotest(char names[NUM_OF_NAMES][NUM_OF_LETTERS]);
+void getShort(char str[NAMES][LETTERS]);
 
-int main(void)
+int main()
 {
-
-    char names[NUM_OF_NAMES][NUM_OF_LETTERS] = {0};
+    char str[NAMES][LETTERS];
+    char minimal[LETTERS];
     int i = 0;
     int j = 0;
-    int x = 0;
+    int min = 9999999999;
+    int temp = 0;
 
-    for (i = 0; i < NUM_OF_NAMES; i++)
+    printf("Enter a string: ");
+
+    for (i = 0; i < 10; i++)
     {
-        scanf("%s", names[i]);
+        scanf("%s", str[i]);
     }
 
-    shrotest(names[NUM_OF_NAMES][NUM_OF_LETTERS]);
-
-    return 0;
-}
-
-void shrotest(char names[NUM_OF_NAMES][NUM_OF_LETTERS])
-{
-    int i = 0;
-    int j = 0;
-    int shortest = 9999999;
-    char endString[NUM_OF_NAMES][NUM_OF_LETTERS] = {0};
-
-    for (i = 0; i < NUM_OF_NAMES; i++)
+    for (i = 0; i < NAMES; i++)
     {
-        if (strlen(names[i][NUM_OF_LETTERS]) < shortest)
+        for (j = 0; str[i][j] > LETTERS; j++)
         {
-            shortest = strlen(names[i][NUM_OF_LETTERS];
-            endString[NUM_OF_NAMES][NUM_OF_LETTERS] = names[i][NUM_OF_LETTERS];
+            if (str[i][j] == '\n')
+            {
+                str[i][j] = '\0';
+            }
         }
     }
-    printf("Shortest: %s", endString[NUM_OF_NAMES][NUM_OF_LETTERS]);
+
+    //search for shortest
+
+    for (i = 0; i < NAMES; i++)
+    {
+        temp = strlen(str[i]);
+        if (temp < min)
+        {
+            min = temp;
+            minimal[LETTERS] = str[i][LETTERS];
+        }
+
+        else
+        {
+            // NO GOTO
+            // NO BREAK
+        }
+    }
+
+    puts(minimal[LETTERS]);
+
+    return 0;
 }
