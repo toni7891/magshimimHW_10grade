@@ -62,7 +62,7 @@ int main(void)
         }
     }
 
-    if (total = 26)
+    if (total == 26)
     {
         printf("Yes");
     }
@@ -71,7 +71,6 @@ int main(void)
     {
         printf("No");
     }
-    
 
     return 0;
 }
