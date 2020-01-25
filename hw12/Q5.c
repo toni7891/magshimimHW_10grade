@@ -9,6 +9,7 @@ int main(void)
 {
     int i = 0;
     int j = 0;
+    int x = 0;
     int total = 0;
 
     char str[WORDS][LETTERS];
@@ -48,16 +49,19 @@ int main(void)
         
         for (j = 0; str[i][j] < LETTERS; j++)
         {
-            if (str[i][j] == letter[j])
+            for (x = 0; x < 26; x++)
             {
-                total = total + 1;
-            }
+                if (str[i][j] == letter[x])
+                {
+                    total = total + 1;
+                }
 
-            if (total == 26)
-            {
-                printf("It's pangram?");
-                printf("Yes");
-                goto END;
+                if (total == 26)
+                {
+                    printf("It's pangram?");
+                    printf("Yes");
+                    goto END;
+                }
             }
         }
     }
