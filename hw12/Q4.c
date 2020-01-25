@@ -7,7 +7,7 @@
 void shortest_Word(char arr[][NUM_OF_LETTERS]);
 void longest_Word(char arr[][NUM_OF_LETTERS]);
 void first_Word(char arr[][NUM_OF_LETTERS]);
-//void last_Word(char arr[][NUM_OF_LETTERS]);
+void last_Word(char arr[][NUM_OF_LETTERS]);
 
 int main()
 {
@@ -23,7 +23,8 @@ int main()
     shortest_Word(names);
     longest_Word(names);
     first_Word(names);
-    //last_Word(names);
+    last_Word(names);
+    
     return 0;
 }
 
@@ -43,7 +44,7 @@ void shortest_Word(char arr[][NUM_OF_LETTERS])
             min = len1;
         }
     }
-    printf("shortest: %s \n", arr[minPos]);
+    printf("\nShortest: %s \n", arr[minPos]);
 }
 
 void longest_Word(char arr[][NUM_OF_LETTERS])
@@ -62,7 +63,7 @@ void longest_Word(char arr[][NUM_OF_LETTERS])
             max = len1;
         }
     }
-    printf("longest: %s \n", arr[maxPos]);
+    printf("Longest: %s \n", arr[maxPos]);
 }
 
 void first_Word(char arr[][NUM_OF_LETTERS])
@@ -83,14 +84,29 @@ void first_Word(char arr[][NUM_OF_LETTERS])
             }
         }
     }
-    
-    printf("First: ");
-    puts(arr[0]);
+
+    printf("First: %s\n" , arr[1]);
 }
 
-/*
+
 void last_Word(char arr[][NUM_OF_LETTERS])
 {
+    int i = 0;
+    int j = 0;
+    char temp[NUM_OF_LETTERS];
+
+    for (i = 0; i <= NUM_OF_NAMES; i++)
+    {
+        for (j = i + 1; j <= NUM_OF_NAMES; j++)
+        {
+            if (strcmp(arr[i], arr[j]) > 0)
+            {
+                strcpy(temp, arr[i]);
+                strcpy(arr[i], arr[j]);
+                strcpy(arr[j], temp);
+            }
+        }
+    }
+
     printf("Last: %s", arr[9]);
 }
-*/
