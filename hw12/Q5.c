@@ -53,7 +53,9 @@ int main(void)
             {
                 if (str[i][j] == letter[x])
                 {
+                    letter[x] = "0";
                     total = total + 1;
+                    
                 }
 
                 if (total == 26)

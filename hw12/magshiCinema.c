@@ -21,6 +21,7 @@ int cinema[ROWS][SEATS_IN_ROW] = {{CHEAP_TICKET_PRICE, CHEAP_TICKET_PRICE, CHEAP
 
 void printCinema(int cinema[][SEATS_IN_ROW], int rows);
 void crazyHouse();
+void clubMember();
 int buyTicket();
 int takenSeats();
 
@@ -40,6 +41,8 @@ int main(void)
 		printf("5 - Set a new price for all seats\n");
 		printf("6 - Exit\n");
 
+		scanf("%d", &choice);
+
 		switch (choice)
 		{
 		case 1:
@@ -52,21 +55,36 @@ int main(void)
 			printf("seats taken: %d \n", takenSeats());
 			break;
 		case 4:
-					printf("what?!"\n");
-					break;
+			clubMember();
+			break;
 		case 5:
-				crazyHouse();
-				break;
+			crazyHouse();
+			break;
 		case 6:
-				break;
+			break;
 		default:
-				printf("Wrong Choice. Enter again");
-				break;
+			printf("Wrong Choice. Enter again\n\n");
 		}
 
 	} while (choice != 6);
 
 	return 0;
+}
+
+void clubMember()
+{
+	int row = 0;
+	int col = 0;
+
+	printf("please input row\n");
+	scanf("%d", &row);
+	printf("plese input column\n");
+	scanf("%d", &col);
+
+	if (cinema[row][col] != -1)
+	{
+		cinema[row][col] = cinema[row][col] * 9 / 10;
+	}
 }
 
 void crazyHouse()

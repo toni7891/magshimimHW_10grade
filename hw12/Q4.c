@@ -1,57 +1,96 @@
 #include <stdio.h>
 #include <string.h>
 
-#define NAMES 10
-#define LETTERS 50
+#define NUM_OF_NAMES 10
+#define NUM_OF_LETTERS 50
 
-void getShort(char str[NAMES][LETTERS]);
+void shortest_Word(char arr[][NUM_OF_LETTERS]);
+void longest_Word(char arr[][NUM_OF_LETTERS]);
+void first_Word(char arr[][NUM_OF_LETTERS]);
+//void last_Word(char arr[][NUM_OF_LETTERS]);
 
 int main()
 {
-    char str[NAMES][LETTERS];
-    char minimal[LETTERS];
+    char names[NUM_OF_NAMES][NUM_OF_LETTERS];
     int i = 0;
-    int j = 0;
-    int min = 9999999999;
-    int temp = 0;
 
-    printf("Enter a string: ");
-
-    for (i = 0; i < 10; i++)
+    printf("Enter 10 names: \n");
+    for (i = 0; i < NUM_OF_NAMES; i++)
     {
-        scanf("%s", str[i]);
+        scanf("%s", names[i]);
     }
 
-    for (i = 0; i < NAMES; i++)
+    shortest_Word(names);
+    longest_Word(names);
+    first_Word(names);
+    //last_Word(names);
+    return 0;
+}
+
+void shortest_Word(char arr[][NUM_OF_LETTERS])
+{
+    int i = 0;
+    int len1 = 0;
+    int minPos = 0;
+    int min = strlen(arr[0]);
+
+    for (int i = 0; i < NUM_OF_NAMES; i++)
     {
-        for (j = 0; str[i][j] > LETTERS; j++)
+        len1 = strlen(arr[i]);
+        if (len1 < min)
         {
-            if (str[i][j] == '\n')
+            minPos = i;
+            min = len1;
+        }
+    }
+    printf("shortest: %s \n", arr[minPos]);
+}
+
+void longest_Word(char arr[][NUM_OF_LETTERS])
+{
+    int i = 0;
+    int len1 = 0;
+    int maxPos = 0;
+    int max = strlen(arr[0]);
+
+    for (int i = 0; i < NUM_OF_NAMES; i++)
+    {
+        len1 = strlen(arr[i]);
+        if (len1 > max)
+        {
+            maxPos = i;
+            max = len1;
+        }
+    }
+    printf("longest: %s \n", arr[maxPos]);
+}
+
+void first_Word(char arr[][NUM_OF_LETTERS])
+{
+    int i = 0;
+    int j = 0;
+    char temp[NUM_OF_LETTERS];
+
+    for (i = 0; i <= NUM_OF_NAMES; i++)
+    {
+        for (j = i + 1; j <= NUM_OF_NAMES; j++)
+        {
+            if (strcmp(arr[i], arr[j]) > 0)
             {
-                str[i][j] = '\0';
+                strcpy(temp, arr[i]);
+                strcpy(arr[i], arr[j]);
+                strcpy(arr[j], temp);
             }
         }
     }
-
-    //search for shortest
-
-    for (i = 0; i < NAMES; i++)
-    {
-        temp = strlen(str[i]);
-        if (temp < min)
-        {
-            min = temp;
-            minimal[LETTERS] = str[i][LETTERS];
-        }
-
-        else
-        {
-            // NO GOTO
-            // NO BREAK
-        }
-    }
-
-    puts(minimal[LETTERS]);
-
-    return 0;
+    
+    printf("First: ");
+    puts(arr[0]);
 }
+
+/*
+void last_Word(char arr[][NUM_OF_LETTERS])
+{
+    printf("Last: %s", arr[9]);
+}
+*/
