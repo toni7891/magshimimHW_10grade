@@ -54,13 +54,14 @@ int main(void)
 		case 4:
 					printf("what?!"\n");
 					break;
-			case 5:
-					crazyHouse();
-					break;
-			case 6:
-					break;
-			default:
-					printf("Wrong Choice. Enter again");
+		case 5:
+				crazyHouse();
+				break;
+		case 6:
+				break;
+		default:
+				printf("Wrong Choice. Enter again");
+				break;
 		}
 
 	} while (choice != 6);

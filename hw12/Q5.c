@@ -47,7 +47,7 @@ int main(void)
     {
         scanf("%s", str[i]);
         
-        for (j = 0; str[i][j] < LETTERS; j++)
+        for (j = 0; j < LETTERS; j++)
         {
             for (x = 0; x < 26; x++)
             {
