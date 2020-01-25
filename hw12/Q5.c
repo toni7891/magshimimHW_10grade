@@ -5,52 +5,30 @@
 #define WORDS 10
 #define LETTERS 50
 
-int checkPangram(char str);
-
 int main(void)
-{
-    int i = 0;
-    int j = 0;
-
-    char str[WORDS][LETTERS];
-
-    for (i = 0; i < WORDS; i++)
-    {
-        scanf("%s", str[i]);
-    }
-    printf("It's pangram?");
-    if (checkPangram(str) == 26)
-    {
-        printf("Yes");
-    }
-
-    else if (checkPangram(str) != 26)
-    {
-        printf("No");
-    }
-    return 0;
-}
-
-int checkPangram(char str)
 {
     int i = 0;
     int j = 0;
     int used[26] = {0}; //to mark every letter in alphabet [english alphabet contains 26 letters]
     int total = 0;
 
-    //reference: https://www.codingconnect.net/c-program-check-given-string-pangram/
-    //
-    for (j = 0; str[j] < WORDS; j++)
+    char str[WORDS][LETTERS];
+    char letter[26] = {'a','b','c','d','e','f','g','h','i','g','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z',};
+
+    printf("Enter up to 10 words, try to make pangram:\n");
+    for (i = 0; i < WORDS; i++)
     {
-        for (i = 0; str[j][i] != '\0'; i++)
+        scanf("%s", str[i]);
+    }
+    printf("It's pangram?");
+
+    for (i = 0; str[i][] < 2; i++)
+    {
+        for (j = 0; str[i][j] < 2; j++)
         {
-            if ('a' <= str[j][i] && str[j][i] <= 'z')
-            {
-                total = total + !used[str[i] - 'a'];
-                used[str[i] - 'a'] = 1;
-            }
+            
         }
     }
 
-    return total;
+    return 0;
 }
