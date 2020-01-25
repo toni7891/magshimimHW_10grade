@@ -45,32 +45,32 @@ int main(void)
     for (i = 0; i < WORDS; i++)
     {
         scanf("%s", str[i]);
-    }
-    printf("It's pangram?");
 
-    for (i = 0; str[i][j] < WORDS; i++)
-    {
-        for (j = 0; str[i][j] < LETTERS; j++)
+        for (i = 0; str[i][j] < WORDS; i++)
         {
-            if (total != 26)
+            for (j = 0; str[i][j] < LETTERS; j++)
             {
-                if (str[i][j] == letter[j])
+                if (total != 26)
                 {
-                    total = total + 1;
+                    if (str[i][j] == letter[j])
+                    {
+                        total = total + 1;
+                    }
+                }
+
+                if (total == 26)
+                {
+                    printf("It's pangram?");
+                    printf("Yes");
+                    goto END;
                 }
             }
         }
     }
 
-    if (total == 26)
-    {
-        printf("Yes");
-    }
-
-    else
-    {
-        printf("No");
-    }
-
+    printf("It's pangram?");
+    printf("No");
+    
+    END:
     return 0;
 }
