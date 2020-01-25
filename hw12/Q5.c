@@ -12,7 +12,7 @@ int main(void)
     int total = 0;
 
     char str[WORDS][LETTERS];
-    char letter[26] = {
+    char letter[LETTERS] = {
         'a',
         'b',
         'c',
@@ -45,25 +45,19 @@ int main(void)
     for (i = 0; i < WORDS; i++)
     {
         scanf("%s", str[i]);
-
-        for (i = 0; str[i][j] < WORDS; i++)
+        
+        for (j = 0; str[i][j] < LETTERS; j++)
         {
-            for (j = 0; str[i][j] < LETTERS; j++)
+            if (str[i][j] == letter[j])
             {
-                if (total != 26)
-                {
-                    if (str[i][j] == letter[j])
-                    {
-                        total = total + 1;
-                    }
-                }
+                total = total + 1;
+            }
 
-                if (total == 26)
-                {
-                    printf("It's pangram?");
-                    printf("Yes");
-                    goto END;
-                }
+            if (total == 26)
+            {
+                printf("It's pangram?");
+                printf("Yes");
+                goto END;
             }
         }
     }
