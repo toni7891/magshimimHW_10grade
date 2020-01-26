@@ -108,5 +108,5 @@ void last_Word(char arr[][NUM_OF_LETTERS])
         }
     }
 
-    printf("Last: %s", arr[9]);
+    printf("Last: %s", arr[10]);
 }
