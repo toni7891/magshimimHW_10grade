@@ -3,13 +3,18 @@
 
 #define ARR_LENGTH 17
 #define MAX_RANGE 256
-#define MIN_RANGE 0
 
 void countingSort(int arr[ARR_LENGTH]);
 
 int main(void)
 {
-    int arr[ARR_LENGTH] = {17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 0, 6, 5, 4, 3, 2, 1};
+    int arr[ARR_LENGTH] = {0};
+    int i = 0;
+
+    for (i = 0; i < ARR_LENGTH; i++)
+    {
+        scanf("%d", &arr[i]);
+    }
 
     countingSort(arr);
     return 0;
@@ -46,13 +51,13 @@ void countingSort(int arr[ARR_LENGTH])
 
     for (i = 0; i < MAX_RANGE; i++)
     {
-        helpArr[i + 1] = helpArr[i] + helpArr[i + 1];
+        helpArr[i + 1] += helpArr[i];
     }
 
     for (i = 0; i < ARR_LENGTH; i++)
     {
-        finalArr[helpArr[i]] = arr[i];
-        helpArr[i]--;
+        finalArr[helpArr[arr[i]] - 1 - min] = arr[i];
+        helpArr[arr[i] - min]--;
     }
 
     for (i = 0; i < ARR_LENGTH; i++)
@@ -60,3 +65,4 @@ void countingSort(int arr[ARR_LENGTH])
         printf("%d ", finalArr[i]);
     }
 }
+//  3 86 34 98 123 56 234 65 87 98 256 67 23 111 65 39 41
