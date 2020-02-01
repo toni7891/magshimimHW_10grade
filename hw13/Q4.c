@@ -56,8 +56,8 @@ void countingSort(int arr[ARR_LENGTH])
 
     for (i = 0; i < ARR_LENGTH; i++)
     {
-        finalArr[helpArr[arr[i]] - 1 - min] = arr[i];
-        helpArr[arr[i] - min]--;
+        finalArr[helpArr[arr[i]] - 1] = arr[i];
+        helpArr[arr[i]]--;
     }
 
     for (i = 0; i < ARR_LENGTH; i++)
