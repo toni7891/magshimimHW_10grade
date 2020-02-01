@@ -8,7 +8,7 @@ int main()
     int array[ARR_LENGTH] = {35, 123, 7, 9, 4, 2, 2, 8, 3, 3, 1, 23, 56, 54, 12, 89, 54};
 
     countingSort(array);
-    printArray(array);
+    return 0;
 }
 
 
@@ -54,5 +54,9 @@ void countingSort(int array[])
         array[i] = output[i];
     }
 
+    for (i = 0; i < ARR_LENGTH; i++)
+    {
+        printf("%d " , output[i]);
+    }
     
 }
