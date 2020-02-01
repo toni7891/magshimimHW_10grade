@@ -1,70 +1,36 @@
 #include <stdio.h>
+#include <string.h>
 
-#define MAX_RANGE 256
 #define ARR_LENGTH 17
+#define MAX_RANGE 256
+#define MIN_RANGE 0
 
-void countingSort(int array[]); 
+void countingSort(int arr[ARR_LENGTH]);
 
-int main()
+int main(void)
 {
-    int array[ARR_LENGTH] = {35, 123, 7, 9, 4, 2, 2, 8, 3, 3, 1, 23, 56, 54, 12, 89, 54};
+    int arr[ARR_LENGTH] = {17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1};
 
-    countingSort(array);
+    countingSort(arr[ARR_LENGTH]);
     return 0;
 }
 
-
-
-void countingSort(int array[])
+void countingSort(int arr[ARR_LENGTH])
 {
-    int output[17];
-    int max = array[0];
-    int count[17];
     int i = 0;
+    int helpArr[ARR_LENGTH] = {0};
 
-    // getting highst value in the array
-    for (i = 1; i < ARR_LENGTH; i++)
+    for (i = 0; i < ARR_LENGTH; i++)
     {
-        if (array[i] > max)
+        if (arr[i] == helpArr[i])
         {
-            max = array[i];
+            helpArr[i]++;
         }
     }
 
-    // every thing not == to max do 0
-    for (i = 0; i <= max; ++i)
-    {
-        count[i] = 0;
-    }
-    
-    // ? 
     for (i = 0; i < ARR_LENGTH; i++)
     {
-        count[array[i]]++;
+        printf("%d ", helpArr[i]);
     }
-
-    // ?
-    for (i = 1; i <= max; i++)
-    {
-        count[i] += count[i - 1];
-    }
-
-    // ????
-    for (i = ARR_LENGTH - 1; i >= 0; i--)
-    {
-        output[count[array[i]] - 1] = array[i];
-        count[array[i]]--;
-    }
-
-    // array after sorting
-    for (i = 0; i < ARR_LENGTH; i++)
-    {
-        array[i] = output[i];
-    }
-
-    //printf
-    for (i = 0; i < ARR_LENGTH; i++)
-    {
-        printf("%d " , output[i]);
-    } 
+    return 0;
 }
