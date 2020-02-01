@@ -11,11 +11,17 @@ int main(void)
     int arr[ARR_LENGTH] = {0};
     int i = 0;
 
+    printf("Enter 17 numbers: \n");
     for (i = 0; i < ARR_LENGTH; i++)
     {
         scanf("%d", &arr[i]);
     }
-
+    printf("Before: \n");
+    for (i = 0; i < ARR_LENGTH; i++)
+    {
+        printf("%d " , arr[i]);
+    }
+    printf("After:\n");
     countingSort(arr);
     return 0;
 }
@@ -56,8 +62,8 @@ void countingSort(int arr[ARR_LENGTH])
 
     for (i = 0; i < ARR_LENGTH; i++)
     {
-        finalArr[helpArr[arr[i]] - 1] = arr[i];
-        helpArr[arr[i]]--;
+        finalArr[helpArr[arr[i] - min] - 1] = arr[i];
+        helpArr[arr[i] - min]--;
     }
 
     for (i = 0; i < ARR_LENGTH; i++)
@@ -65,4 +71,4 @@ void countingSort(int arr[ARR_LENGTH])
         printf("%d ", finalArr[i]);
     }
 }
-//  3 86 34 98 123 56 234 65 87 98 256 67 23 111 65 39 41
+
