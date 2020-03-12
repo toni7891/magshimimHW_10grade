@@ -37,9 +37,10 @@ int main(void)
 	if (val == 0)
 	{
 		printf("Number found, index: 0\n");
+		return 0;
 	}
 
-	else if (res == FALSE)
+	if (res == FALSE)
 	{
 		printf("Number not found\n");
 	}
@@ -73,6 +74,7 @@ int binarySearch(int arr[], int len, int val)
 		if (val == 0)
 		{
 			found = TRUE;
+			return found;
 		}
 
 		mid = (start + end) / 2;
