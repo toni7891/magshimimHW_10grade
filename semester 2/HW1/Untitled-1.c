@@ -24,23 +24,24 @@ int tie = 0;
 
 int main(void)
 {
-    int i = 0;
-    int validx = 0;
-    int valido = 0;
+
+    int o1 = 0;
+
+    int o2 = 0;
+
     char xoBoard[BOARD_SIZE][BOARD_SIZE] = {{BLANK, BLANK, BLANK},
                                             {BLANK, BLANK, BLANK},
                                             {BLANK, BLANK, BLANK}};
 
-    while (i < 9 || win == 0 || tie == 0)
+    while (i != 9 || win != 1 || tie != 1 || lose != 1)
     {
 
         printf("It is x's turn.\n");
     ASKX:
-        validx = 0;
         printf("Enter location on board: ");
-        validx = getInputX(xoBoard);
+        getInputX(x1, x2);
 
-        if (validx == 123)
+        if (getInputX == 123)
         {
             goto ASKX;
         }
@@ -63,23 +64,21 @@ int main(void)
         if (i == 9)
         {
             printf("Tie!");
-            tie = tie + 1;
             return 0;
         }
 
         printf("It is o's turn.\n");
     ASKO:
-        valido = 0;
         printf("Enter location on board: ");
-        valido = getInputO(xoBoard);
 
-        if (validx == 123)
+        getInputO(xoBoard);
+        if (getInputO == 123)
         {
             goto ASKO;
         }
-
         printBoard(xoBoard);
         winCheck(xoBoard);
+
         if (win == 1 && x == 1)
         {
             printf("X is the winner!");
@@ -91,7 +90,6 @@ int main(void)
             printf("O is the winner!");
             goto END;
         }
-
         i = i + 1;
     }
 
@@ -111,7 +109,7 @@ void printBoard(char xoBoard[][BOARD_SIZE])
     {
         for (j = 0; j < BOARD_SIZE; j++)
         {
-            printf("%3c", xoBoard[i][j]);
+            printf("%3c", board[i][j]);
         }
         printf("\n");
     }
@@ -123,45 +121,39 @@ int getInputX(char xoBoard[][BOARD_SIZE])
     int x1 = 0;
     int x2 = 0;
 
-    do
+    if (xoBoard[x1][x2] != 'x' || xoBoard[x1][x2] != 'o')
     {
         scanf("%d %d", &x1, &x2);
-        if (xoBoard[x1][x2] == 'x' || xoBoard[x1][x2] == 'o')
-        {
-            printf("Location taken! Try again\n");
-            return 123;
-        }
+        xoBoard[x1][x2] = 'x';
+    }
 
-        else
-        {
-            xoBoard[x1][x2] = 'x';
-            return 200;
-        }
+    if (xoBoard[x1][x2] == 'x' || xoBoard[x1][x2] == 'o')
+    {
+        printf("Location taken! Try again");
+        return 123;
+    }
 
-    } while (xoBoard[x1][x2] != 'x' || xoBoard[x1][x2] != 'o');
+    return 200;
 }
 
-int getInputO(char xoBoard[][BOARD_SIZE])
+void getInputO(char xoBoard[][BOARD_SIZE])
 {
     int o1 = 0;
     int o2 = 0;
 
-    do
+    while (xoBoard[o1][o2] != 'x' || xoBoard[o1][o2] != 'o')
     {
         scanf("%d %d", &o1, &o2);
+        xoBoard[o1][o2] = 'x';
+    }
 
-        if (xoBoard[o1][o2] == 'x' || xoBoard[o1][o2] == 'o')
-        {
-            printf("Location taken! Try again\n");
-            return 123;
-        }
+    if (xoBoard[o1][o2] == 'x' || xoBoard[o1][o2] == 'o')
+    {
+        printf("Location taken! Try again");
+        return 123;
+    }
 
-        else
-        {
-            xoBoard[o1][o2] = 'o';
-            return 200;
-        }
-    } while (xoBoard[o1][o2] != 'x' || xoBoard[o1][o2] != 'o');
+    return 200;
 }
 
 void winCheck(char xoBoard[][BOARD_SIZE])
