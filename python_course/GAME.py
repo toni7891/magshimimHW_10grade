@@ -26,7 +26,7 @@ def print_hangman():
      |_|  |_|\\__,_|_| |_|\\__, |_| |_| |_|\\__,_|_| |_|
                           __/ |                      
                          |___/
-""")
+    """)
 
 
 def print_hangman_figures(num_of_tries):
