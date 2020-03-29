@@ -1,0 +1,119 @@
+import random
+
+
+def print_hangman():
+    print("""  _    _
+     | |  | |
+     | |__| | __ _ _ __   __ _ _ __ ___   __ _ _ __
+     |  __  |/ _` | '_ \\ / _` | '_ ` _ \\ / _` | '_ \\
+     | |  | | (_| | | | | (_| | | | | | | (_| | | | |
+     |_|  |_|\\__,_|_| |_|\\__, |_| |_| |_|\\__,_|_| |_|
+                          __/ |
+                         |___/""")
+    print(random.randint(1, 10))
+
+
+def hangman_pics(current_guess):
+    HANGMAN_PHOTOS = {"stage 0": """x-------x
+""", "stage 1": """x-------x
+|
+|
+|
+|
+|
+""", "stage 2": """x-------x
+|       |
+|       0
+|
+|
+|
+""", "stage 3": """x-------x
+|       |
+|       0
+|       |
+|
+|
+""", "stage 4": """x-------x
+|       |
+|       0
+|      /|\\
+|
+|
+""", "stage 5": """x-------x
+|       |
+|       0
+|      /|\\
+|      /
+|
+""", "stage 6": """x-------x
+|       |
+|       0
+|      /|\\
+|      / \\
+|"""}
+
+    return HANGMAN_PHOTOS["stage " + str(current_guess)]
+
+
+def check_win(secret_word, old_letters_guessed):
+    return secret_word == ''.join([letter for letter in secret_word if letter in old_letters_guessed])
+
+
+def show_hidden_word(secret_word, old_letters_guessed):
+    return ''.join([letter + ' ' if letter in old_letters_guessed else '_ ' for letter in secret_word])[:-1:]
+
+
+def check_valid_input(letter_guessed, old_letters_guessed):
+    return len(letter_guessed) == 1 and letter_guessed.isalpha() and letter_guessed.lower() not in old_letters_guessed
+
+
+def try_update_letter_guessed(letter_guessed, old_letters_guessed):
+    if len(letter_guessed) == 1 and letter_guessed.isalpha() and letter_guessed.lower() not in old_letters_guessed:
+        old_letters_guessed.append(letter_guessed.lower())
+        return True
+    else:
+        if ' -> '.join(sorted(old_letters_guessed)) != '':
+            print('X\n' + ' -> '.join(sorted(old_letters_guessed)))
+        else:
+            print('X')
+        return False
+
+
+def choose_word(file_path, index):
+    with open(file_path, 'r') as datafile:
+        r1 = len(dict.fromkeys(datafile.read().split(" ")))
+    with open(file_path, 'r') as datafile:
+        index = index % len(datafile.read().split(" "))
+    with open(file_path, 'r') as datafile:
+        r2 = datafile.read().split()[index - 1]
+    return [r1, r2]
+
+
+def main():
+    old_letters_guessed = []
+    MAX_TRIES = 6
+    num_of_tries = 0
+    current_letter = ''
+    user_won = False
+    secret_word = choose_word(input('Enter the file path: '), int(input('Enter index: ')))[1]
+
+    print('Let\'s start!\n' + hangman_pics(num_of_tries) + show_hidden_word(secret_word, old_letters_guessed))
+    while num_of_tries <= MAX_TRIES and not user_won:
+        current_letter = input('Guess a letter: ')
+        while not try_update_letter_guessed(current_letter, old_letters_guessed):
+            current_letter = input('Guess a letter: ')
+        if current_letter in secret_word:
+            print(show_hidden_word(secret_word, old_letters_guessed))
+        else:
+            print(':(\n' + hangman_pics(num_of_tries))
+            print(show_hidden_word(secret_word, old_letters_guessed))
+        if check_win(secret_word, old_letters_guessed):
+            print('WIN')
+            user_won = True
+        num_of_tries += 1
+    if not user_won:
+        print(show_hidden_word(secret_word, old_letters_guessed) + '\nLOSE')
+
+
+if __name__ == '__main__':
+    main()
