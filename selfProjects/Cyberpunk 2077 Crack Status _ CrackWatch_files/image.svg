@@ -1,0 +1,25 @@
+
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop-HD" transform="translate(-1669.000000, -1756.000000)">
+            <g id="button-image" transform="translate(1669.000000, 1756.000000)">
+                <g id="Outline_Icons" stroke="#E8E5E0" stroke-linejoin="round">
+                    <g id="Group">
+                        <path d="M23.5,19.5 C23.5,21.7 21.7,23.5 19.5,23.5 L4.5,23.5 C2.3,23.5 0.5,21.7 0.5,19.5 L0.5,4.5 C0.5,2.3 2.3,0.5 4.5,0.5 L19.5,0.5 C21.7,0.5 23.5,2.3 23.5,4.5 L23.5,19.5 Z" id="Shape" stroke-linecap="round"></path>
+                        <g id="Group-21" transform="translate(0.000000, 5.000000)">
+                            <polyline id="Shape" points="20.5714286 14.2857143 17.1428571 5.14285714 12.5714286 12 9.71428571 8.57142857 6.28571429 14.2857143"></polyline>
+                            <circle id="Oval" cx="8" cy="2.28571429" r="1.71428571"></circle>
+                            <path d="M23.4285714,14.2857143 L0.571428571,14.2857143" id="Shape"></path>
+                        </g>
+                    </g>
+                </g>
+                <g id="Invisible_Shape">
+                    <rect id="Rectangle-path" x="0" y="0" width="24" height="24"></rect>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

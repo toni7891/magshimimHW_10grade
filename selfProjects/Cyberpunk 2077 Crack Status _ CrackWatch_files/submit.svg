@@ -1,0 +1,22 @@
+
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop-HD" transform="translate(-1629.000000, -1756.000000)">
+            <g id="button-enter" transform="translate(1629.000000, 1756.000000)">
+                <g id="Outline_Icons" stroke="#E8E5E0" stroke-linecap="round" stroke-linejoin="round">
+                    <g id="Group">
+                        <path d="M23.5,19.5 C23.5,21.7 21.7,23.5 19.5,23.5 L4.5,23.5 C2.3,23.5 0.5,21.7 0.5,19.5 L0.5,4.5 C0.5,2.3 2.3,0.5 4.5,0.5 L19.5,0.5 C21.7,0.5 23.5,2.3 23.5,4.5 L23.5,19.5 Z" id="Shape"></path>
+                        <polyline id="Shape" points="6.499 12.5 17.5 12.5 17.5 8.5"></polyline>
+                        <polyline id="Shape" points="9.5 9.5 6.5 12.5 9.5 15.5"></polyline>
+                    </g>
+                </g>
+                <g id="Invisible_Shape">
+                    <rect id="Rectangle-path" x="0" y="0" width="24" height="24"></rect>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

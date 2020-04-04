@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="20px" height="26px" viewBox="0 0 20 26" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 57.1 (83088) - https://sketch.com -->
+    <title>privacy</title>
+    <desc>Created with Sketch.</desc>
+    <g id="icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop-HD" transform="translate(-1461.000000, -1817.000000)">
+            <g id="privacy" transform="translate(1459.000000, 1818.000000)">
+                <g id="Outline_Icons_1_" transform="translate(3.000000, 0.000000)" stroke-width="1.33333333">
+                    <g id="Outline_Icons">
+                        <g id="Group">
+                            <circle id="Oval" stroke="#ED1C24" cx="9" cy="15" r="1"></circle>
+                            <path d="M9,15.5 L9,18.5" id="Shape" stroke="#ED1C24"></path>
+                            <path d="M3.5,6 C3.5,2.962 5.962,0.5 9,0.5 C12.038,0.5 14.5,2.962 14.5,6 L14.5,9.5 L3.5,9.5 L3.5,6 Z" id="Shape" stroke="#ED1C24"></path>
+                            <rect id="Rectangle-path" stroke="#E8E5E0" x="0.5" y="9.5" width="17" height="14"></rect>
+                        </g>
+                    </g>
+                </g>
+                <g id="Invisible_Shape">
+                    <rect id="Rectangle-path" x="0" y="0" width="24" height="24"></rect>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 57.1 (83088) - https://sketch.com -->
+    <title>hierarchy-business</title>
+    <desc>Created with Sketch.</desc>
+    <g id="icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop-HD" transform="translate(-1305.000000, -1818.000000)">
+            <g id="hierarchy-business" transform="translate(1305.000000, 1818.000000)">
+                <g id="Outline_Icons_1_" stroke-linecap="round" stroke-linejoin="round">
+                    <g id="Outline_Icons">
+                        <g id="Group">
+                            <circle id="Oval" stroke="#E8E5E0" cx="12" cy="3.289" r="2.774"></circle>
+                            <path d="M16.438,10.5 L7.562,10.5 C7.562,8.051 9.548,6.062 12,6.062 C14.453,6.062 16.438,8.051 16.438,10.5 Z" id="Path" stroke="#E8E5E0"></path>
+                            <circle id="Oval" stroke="#ED1C24" cx="4.459" cy="17.958" r="2"></circle>
+                            <path d="M8.004,23.502 L0.914,23.502 C0.914,21.544 2.5,19.958 4.459,19.958 C6.417,19.958 8.004,21.544 8.004,23.502 Z" id="Path" stroke="#ED1C24"></path>
+                            <circle id="Oval" stroke="#E8E5E0" cx="19.459" cy="17.958" r="2"></circle>
+                            <path d="M23.004,23.502 L15.914,23.502 C15.914,21.544 17.5,19.958 19.459,19.958 C21.417,19.958 23.004,21.544 23.004,23.502 Z" id="Path" stroke="#E8E5E0"></path>
+                            <circle id="Oval" stroke="#E8E5E0" cx="19.459" cy="17.958" r="2"></circle>
+                            <path d="M23.004,23.502 L15.914,23.502 C15.914,21.544 17.5,19.958 19.459,19.958 C21.417,19.958 23.004,21.544 23.004,23.502 Z" id="Path" stroke="#E8E5E0"></path>
+                            <circle id="Oval" stroke="#E8E5E0" cx="12" cy="17.958" r="2"></circle>
+                            <path d="M15.545,23.502 L8.456,23.502 C8.456,21.544 10.042,19.958 12,19.958 C13.959,19.958 15.545,21.544 15.545,23.502 Z" id="Path" stroke="#E8E5E0"></path>
+                            <polyline id="Path" stroke="#E8E5E0" points="4.5 13.479 4.5 12.5 19.5 12.5 19.5 13.479"></polyline>
+                            <path d="M12,10.5 L12,13.479" id="Path" stroke="#E8E5E0"></path>
+                        </g>
+                    </g>
+                </g>
+                <g id="Invisible_Shape">
+                    <rect id="Rectangle" x="0" y="0" width="24" height="24"></rect>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

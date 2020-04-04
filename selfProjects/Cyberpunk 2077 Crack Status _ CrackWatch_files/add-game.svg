@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="23px" height="23px" viewBox="0 0 23 23" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 57.1 (83088) - https://sketch.com -->
+    <title>add-game</title>
+    <desc>Created with Sketch.</desc>
+    <g id="icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop-HD" transform="translate(-1552.000000, -1818.000000)">
+            <g id="add-game" transform="translate(1552.000000, 1818.000000)">
+                <g id="Outline_Icons_1_">
+                    <g id="Outline_Icons">
+                        <g id="Group">
+                            <circle id="Oval" stroke="#ED1C24" cx="11.5" cy="11.5" r="11"></circle>
+                            <path d="M11.5,5.5 L11.5,17.5" id="Shape" stroke="#E8E5E0"></path>
+                            <path d="M17.5,11.5 L5.5,11.5" id="Shape" stroke="#E8E5E0"></path>
+                        </g>
+                    </g>
+                </g>
+                <g id="Invisible_Shape">
+                    <rect id="Rectangle-path" x="0" y="0" width="24" height="24"></rect>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

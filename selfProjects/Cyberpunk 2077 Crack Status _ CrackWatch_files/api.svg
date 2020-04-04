@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="22px" height="24px" viewBox="0 0 22 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 57.1 (83088) - https://sketch.com -->
+    <title>api</title>
+    <desc>Created with Sketch.</desc>
+    <g id="icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop-HD" transform="translate(-1703.000000, -1818.000000)">
+            <g id="api" transform="translate(1703.000000, 1818.000000)">
+                <g id="Outline_Icons_1_">
+                    <g id="Outline_Icons">
+                        <g id="Group">
+                            <ellipse id="Oval" stroke="#E8E5E0" cx="10.6864564" cy="4.80890538" rx="10.1521336" ry="4.27458256"></ellipse>
+                            <path d="M20.8375213,9.08348794 C20.8375213,11.4451948 16.2915028,13.3580705 10.6853878,13.3580705 C5.07927273,13.3580705 0.533254174,11.4451948 0.533254174,9.08348794" id="Shape" stroke="#ED1C24"></path>
+                            <path d="M20.8375213,13.8923933 C20.8375213,16.2541002 16.2915028,18.1669759 10.6853878,18.1669759 C5.07927273,18.1669759 0.533254174,16.2541002 0.533254174,13.8923933" id="Shape" stroke="#E8E5E0"></path>
+                            <path d="M0.533254174,4.80890538 L0.533254174,18.7012987 C0.533254174,21.0630056 5.07927273,22.9758813 10.6853878,22.9758813 C16.2915028,22.9758813 20.8375213,21.0630056 20.8375213,18.7012987 L20.8375213,4.80890538" id="Shape" stroke="#E8E5E0"></path>
+                        </g>
+                    </g>
+                </g>
+                <g id="Invisible_Shape">
+                    <rect id="Rectangle-path" x="0" y="0" width="23.5102041" height="23.5102041"></rect>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

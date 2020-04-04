@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="25px" height="21px" viewBox="0 0 25 21" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 57.1 (83088) - https://sketch.com -->
+    <title>markets</title>
+    <desc>Created with Sketch.</desc>
+    <g id="icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop-HD" transform="translate(-1641.000000, -1820.000000)">
+            <g id="markets" transform="translate(1641.000000, 1818.000000)">
+                <g id="Outline_Icons" transform="translate(0.000000, 2.000000)">
+                    <g id="Group">
+                        <polyline id="Shape" stroke="#E8E5E0" stroke-linecap="round" stroke-linejoin="round" points="21.502 8.338 21.502 20.5 2.502 20.5 2.502 8.338"></polyline>
+                        <rect id="Rectangle-path" stroke="#E8E5E0" stroke-linecap="round" stroke-linejoin="round" x="4.502" y="11.5" width="8" height="6"></rect>
+                        <rect id="Rectangle-path" stroke="#E8E5E0" stroke-linecap="round" stroke-linejoin="round" x="14.502" y="11.5" width="5" height="9"></rect>
+                        <polygon id="Shape" stroke="#ED1C24" stroke-linecap="round" stroke-linejoin="round" points="21.502 0.5 2.502 0.5 0.502 4.5 23.502 4.5"></polygon>
+                        <path d="M23.502,5.5 C23.502,7.802 20.742,9.728 18.502,7.5 C17.048,9.81 13.844,10.23 12.002,8.14 C10.14,10.257 6.937,9.778 5.502,7.5 C3.288,9.706 0.502,7.827 0.502,5.5 L0.502,4.5 L23.502,4.5 L23.502,5.5 Z" id="Shape" stroke="#ED1C24" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <polyline id="Shape" stroke="#E8E5E0" stroke-linecap="round" stroke-linejoin="round" points="5.502 7.5 5.502 4.5 6.502 0.5"></polyline>
+                        <polyline id="Shape" stroke="#E8E5E0" stroke-linecap="round" stroke-linejoin="round" points="12.002 8.146 12.002 4.5 12.002 0.5"></polyline>
+                        <polyline id="Shape" stroke="#E8E5E0" stroke-linecap="round" stroke-linejoin="round" points="18.502 7.5 18.502 4.5 17.502 0.5"></polyline>
+                        <path d="M17.502,16 C17.226,16 17.002,16.224 17.002,16.5 C17.002,16.777 17.226,17 17.502,17 C17.778,17 18.002,16.777 18.002,16.5 C18.002,16.224 17.778,16 17.502,16 L17.502,16 Z" id="Shape" fill="#E8E5E0" fill-rule="nonzero"></path>
+                    </g>
+                </g>
+                <g id="Invisible_Shape">
+                    <rect id="Rectangle-path" x="0" y="0" width="24" height="24"></rect>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

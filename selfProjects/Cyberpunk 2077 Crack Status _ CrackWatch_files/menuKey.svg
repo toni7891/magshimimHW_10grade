@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="23px" viewBox="0 0 24 23" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 57.1 (83088) - https://sketch.com -->
+    <title>menuKey</title>
+    <desc>Created with Sketch.</desc>
+    <g id="icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop-HD" transform="translate(-1672.000000, -1819.000000)">
+            <g id="menuKey" transform="translate(1672.000000, 1818.000000)">
+                <g id="Outline_Icons_1_" stroke-linecap="round" stroke-linejoin="round" transform="translate(0.000000, 1.000000)">
+                    <g id="Outline_Icons">
+                        <g id="Group">
+                            <circle id="Oval" stroke="#ED1C24" cx="6" cy="17" r="2.5"></circle>
+                            <path d="M21.5,8.5 L23,7 L20.5,4.5 L22,3 C22.553,2.449 22.553,1.553 22,1 C21.447,0.449 20.553,0.449 20,1 L8.755,12.245 C7.944,11.774 7.005,11.5 6,11.5 C2.963,11.5 0.5,13.963 0.5,17 C0.5,20.038 2.963,22.5 6,22.5 C9.037,22.5 11.5,20.038 11.5,17 C11.5,15.995 11.226,15.056 10.755,14.245 L16,9.001 L18,11 L19.5,9.5 L17.5,7.5 L19,6 L21.5,8.5 Z" id="Shape" stroke="#E8E5E0"></path>
+                        </g>
+                    </g>
+                </g>
+                <g id="Invisible_SHape">
+                    <rect id="Rectangle-path" x="0" y="0" width="24" height="24"></rect>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
