@@ -28,8 +28,7 @@ def extract_password_from_site():
         21: requests.get('http://webisfun.cyber.org.il/nahman/files/file31.nfo'),
         22: requests.get('http://webisfun.cyber.org.il/nahman/files/file32.nfo'),
         23: requests.get('http://webisfun.cyber.org.il/nahman/files/file33.nfo'),
-        24: requests.get('http://webisfun.cyber.org.il/nahman/files/file34.nfo')
-    }
+        24: requests.get('http://webisfun.cyber.org.il/nahman/files/file34.nfo')}
 
     for key in dict_of_req:
         temp = dict_of_req[key]
@@ -40,7 +39,6 @@ def extract_password_from_site():
                 new_list.append(char)
     return "".join(new_list)
 
-
 def find_most_common_words():
     file = requests.get(
         'http://webisfun.cyber.org.il/nahman/final_phase/words.txt').text.split(" ")
@@ -48,13 +46,9 @@ def find_most_common_words():
     first_tuple_elements = [a_tuple[0] for a_tuple in list_sorted]
     return " ".join(first_tuple_elements)
 
-
 def main():
-    choice = int(input(
-        "1: Find the password (part 1).\n2: Find sentence (part 2)\nYour choice?: "))
-    print(extract_password_from_site()) if choice is 1 else print(
-        find_most_common_words())
-
+    choice = int(input("1: Find the password (part 1).\n2: Find sentence (part 2)\nYour choice?: "))
+    print(extract_password_from_site()) if choice is 1 else print(find_most_common_words())
 
 if __name__ == '__main__':
     main()
