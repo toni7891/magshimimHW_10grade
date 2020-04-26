@@ -1,18 +1,18 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 #define MAX_LEN 100
 
 int main(void)
 {
     char str[MAX_LEN] = {0};
-    int len = 0;
-    char *secStr;
+    int *secStr;
     printf("Please enter a string: ");
     fgets(str, MAX_LEN, stdin);
-    printf("The length of the string is: ");
-    scanf("%d", &len);
-    secStr = (char *) malloc(len * sizeof(int));
-    printf("%d bytes were allocated!", len * sizeof(int));
+    printf("The length of the string is: %d\n", strlen(str) - 1);
+    secStr = (int *)malloc(strlen(str) - 1) * sizeof(int));
+    printf("%d bytes were allocated!", (strlen(str) - 1) * sizeof(int));
+    getchar();
     return 0;
 }
