@@ -116,7 +116,9 @@ void freeMemory(list *list)
     int numberOfReasons = list->numReasons;
     for (i = 0; i < list->numReasons; i++)
     {
-        free(list->reasons[i]);
+        if (list->reasons[i])
+        {
+            free(list->reasons[i]);
+        }
     }
-    free(&(list->numReasons));
 }
