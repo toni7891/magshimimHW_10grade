@@ -18,18 +18,18 @@
 #define STR_LEN 20
 #define NO_WINNER -1
 
-struct bingoPlayer
+typedef struct bingoPlayer
 {
-    char name[STR_LEN] = "Daniel";
-    char board[BOARD_SIZE][BOARD_SIZE] = {0};
-};
+    char name[STR_LEN];
+    char board[BOARD_SIZE][BOARD_SIZE];
+} bingoPlayer;
 
 typedef struct bingoGame
 {
-    int *numsDrawn = 0;
-    int numOfNumsDrawn = 0;
-    struct bingoPlayer *players = 0;
-    int numPlayers = 0;
+    int *numsDrawn;
+    int numOfNumsDrawn;
+    bingoPlayer *players;
+    int numPlayers;
 } bingoGame;
 
 void initGame(bingoGame *game, int players);
@@ -111,13 +111,13 @@ void initBingoPlayer(bingoPlayer *pPlayer)
     int num = 0;
 
     printf("What is the player's name?\n");
-    myFgets(pPlayer.name, STR_LEN);
+    myFgets(pPlayer->name, STR_LEN);
 
     for (i = 0; i < BOARD_SIZE; i++)
     {
         for (j = 0; j < BOARD_SIZE; j++)
         {
-            pPlayer.board[i][j] = 0;
+            pPlayer->board[i][j] = 0;
         }
     }
 
@@ -245,15 +245,15 @@ Output: None
 void printBoards(bingoGame game)
 {
     int i = 0;
-    for (i = 0; i < game->numPlayers; i++)
+    for (i = 0; i < game.numPlayers; i++)
     {
-        printf("%s's board:\n", game->players[i]->name);
-        printBoard(game->players[i]);
+        printf("%s's board:\n", game.players[i].name);
+        printBoard(game.players[i]);
     }
 }
 
 /* This function checks if a player has won (got a row of HITS)
-Input: bingo Player 
+Input: bingo Player
 Output: int - 1 if won, 0 otherwise
 */
 int hasWon(bingoPlayer player)
