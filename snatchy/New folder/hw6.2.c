@@ -65,7 +65,7 @@ void print(list* pro, list* con)
 		printf("%s\n", pro->reasons[i]);
 	}
 	printf("\n\nList CON\n---------\n");
-	for (i = 0; i < con->numOfReasons; i++)
+	for (int i = 0; i < con->numOfReasons; i++)
 	{
 		printf("%s\n", con->reasons[i]);
 	}
@@ -78,7 +78,7 @@ void memory(list* list1, list* list2) //clean all  (is there an easier way?)
 		free(list1->reasons[i]);
 	}
 	free(list1->reasons);
-	for (i = 0; i < list2->numOfReasons; i++)
+	for (int i = 0; i < list2->numOfReasons; i++)
 	{
 		free(list2->reasons[i]);
 	}
