@@ -1,44 +1,47 @@
-#include <stdio.h>
-#pragma pack(push, 2)
+import socket
 
-struct menuItem {
-    char isSpicy; // @ 0
-    float price; // @ 1
-    char name[7]; // @  5 + 7 = 12
-};
-struct menuItem2 {
-    char name[7]; // @ 0
-    char isSpicy; // @ 7
-    float price; // @ 8 + 4 =12
-};
+# server and client info
+SERVER_IP_ADDR = '54.71.128.194'
+SERVER_PORT = 92
+CLIENTSIDE_IP_ADDR = '127.0.0.1'
+CLIENTSIDE_PORT = 9090
 
 
+# the proxy server
 
-int main(void)
-{
+# in this function i took insperation from
+# https://stackoverflow.com/questions/51331426/python-socket-how-do-i-choose-between-s-send-and-conn-send
 
-    //Write your code here...
-    printf("size 1: %d    size 2: %d   ", sizeof(struct menuItem), sizeof(struct menuItem2));
-    getchar();
-    return 0;
-}
-//
-// struct ST
-// {
-//    long long ll; // @ 0
-//    int i;        // @ 8
-//    short s;      // @ 12
-//    char ch1;     // @ 14
-//    char ch2;     // @ 15
-// } ST;
-//   .> 16
-//
-// struct ST
-// {
-//    char ch1; // @0
-//    short s; // @ 1
-//    char ch2; // @ 3
-//    long long ll; // @ 4
-//    int i; // 12
-//    -> 16
-// };
+def proxy_server():
+    socket_status = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    socket_status = socket_status.bind((CLIENTSIDE_IP_ADDR, CLIENTSIDE_PORT))
+    socket_status = socket_status.listen()
+    conn, addr = socket_status.accept()
+    client_message = conn.recv(1024).decode()
+    return conn, client_message
+
+
+# fixing error because of dumb protocol
+def error_help(client_message):
+    socket_get_message = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    socket_get_message = socket_get_message.connect(
+        (SERVER_IP_ADDR, SERVER_PORT))
+    socket_get_message = socket_get_message.send(client_message)
+    if 'France' in client_message.decode():
+        return 'ERROR#"France is banned!"'.encode()
+    if 'SERVERERROR' in client_message.decode():
+        return ('ERROR#' + client_message.decode().split('#')[1]).encode()
+    if 'SERVERERROR' not in client_message.decode() and 'France' not in client_message.decode():
+        return client_message.decode().replace('jpg', '.jpg').encode()
+
+
+def main():
+    while True:
+        message_from_usr = proxy_server()
+        print(message_from_usr)
+        error_help(message_from_usr)
+    conn.close()
+
+
+if __name__ == "main":
+    main()
