@@ -1,0 +1,100 @@
+{
+  "CustomLocations": [],
+  "CustomVehicles": [],
+  "Hotkeys": [
+    {
+      "Action": "TeleportToWaypoint",
+      "VirtualKey": 117
+    },
+    {
+      "Action": "HealAll",
+      "VirtualKey": 118
+    },
+    {
+      "Action": "ToggleWantedLevel",
+      "VirtualKey": 119
+    },
+    {
+      "Action": "TeleportToObjective",
+      "VirtualKey": 121
+    }
+  ],
+  "Menu": {
+    "KeyBindings": {
+      "BackKey": 48,
+      "DownKey": 40,
+      "LeftKey": 37,
+      "MenuToggle": 116,
+      "RightKey": 39,
+      "SelectKey": 33,
+      "UpKey": 38
+    },
+    "Opacity": 192,
+    "XPosition": 240,
+    "YPosition": 40
+  },
+  "PlayerOptions": {
+    "EveryoneIgnore": false,
+    "FreezeWantedLevel": false,
+    "GodMode": false,
+    "NeverWanted": false,
+    "NoRagdoll": false,
+    "PoliceIgnore": false,
+    "RunSpeed": 1.0,
+    "SeatbeltEnabled": false,
+    "SwimSpeed": 1.0,
+    "Waterproof": false
+  },
+  "Protection": {
+    "DisableTeleportToAppartment": false,
+    "DisableVehicleKick": false,
+    "NoAlterStats": false,
+    "NoAlterWantedLevel": false,
+    "NoForceKickToSP": false,
+    "NoFreeze": false,
+    "NoPTFX": false,
+    "NoRemoteControl": false,
+    "NoRemoteRagdoll": false,
+    "NoRemoteTeleport": false,
+    "NoRemoveAllWeapons": false,
+    "NoRemoveWeapon": false
+  },
+  "Tunables": {
+    "APMultiplier": 1.0,
+    "ExtendBunkerTimers": false,
+    "ExtendExportTimers": false,
+    "ExtendMCTimers": false,
+    "ExtendNightclubTimers": false,
+    "MinMissionPayout": 0.0,
+    "NoIdleAFK": true,
+    "RPMultiplier": 1.0,
+    "RemoveBunkerSupplyDelay": true,
+    "RemoveFreemodeMissionCooldown": false,
+    "RemoveIECooldown": false,
+    "RemoveMCSupplyDelay": false,
+    "RemoveMissionTimeThrottling": false,
+    "RemoveNightclubCooldown": false,
+    "RemoveOribitalCooldown": false,
+    "UnlockAllResearch": true,
+    "UnlockAllVehicles": true,
+    "WheelAPReward": 0,
+    "WheelMoneyReward": 0,
+    "WheelRPReward": 0
+  },
+  "Vehicle": {
+    "BoostAutoRecharge": false,
+    "DisableRestore": true,
+    "FreezeAmmo": false,
+    "InfiniteBoost": false,
+    "MaxSpeed": 0.0
+  },
+  "Weapons": {
+    "DisableRestore": true,
+    "FreezeAmmo": false,
+    "InfiniteAmmo": false,
+    "InfiniteClip": false,
+    "NoRecoil": false,
+    "NoReload": false,
+    "NoSpread": false
+  }
+}

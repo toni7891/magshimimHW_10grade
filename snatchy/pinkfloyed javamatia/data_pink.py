@@ -22,9 +22,7 @@ def extract_data(input_file):
     input_file = get_text(input_file)  # get the text from the file
     song_index = 1
     database = []
-    for song in range(0,
-                      input_file.count(
-                          "*")):  # run through the number of songs, each time assemble the required information
+    for song in range(0, input_file.count("*")):  # run through the number of songs, each time assemble the required information
 
         # find song name
         song_index = input_file.find('*', song_index + 1)  # update the song index to the last appearance of *
