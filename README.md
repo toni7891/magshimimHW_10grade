@@ -1,4 +1,4 @@
-# 🎓 Magshimim – 9-10th Grade Homework & Projects (2019)
+# 🎓 Magshimim – 10th Grade Homework & Projects (2019)
 
 This repository contains homework assignments, exercises, and projects completed during my participation in the **Magshimim (מגשימים)** program — a cybersecurity and computer science program for high school students.
 
